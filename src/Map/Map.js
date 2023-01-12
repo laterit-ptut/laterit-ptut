@@ -1,5 +1,5 @@
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Sky, Cloud } from "@react-three/drei";
 import { Euler } from "three";
 
@@ -11,6 +11,21 @@ export function Map() {
 
   // const config = { fov: 35, position: [0, 0, 10] }
 
+  const camera = useRef();
+
+  
+
+  const Camera = () => {
+
+    useFrame(() => {
+      // console.log(camera.current);
+    });
+
+    return (
+      <PerspectiveCamera ref={camera} makeDefault fov={50} position={[6.191, 4.909, 2.280]} rotation={new Euler( -1.107, 0.882, 0.996, 'XYZ' )} />
+    )
+  }
+
   return (
     <div className="Map">
       <Canvas shadows>
@@ -19,7 +34,7 @@ export function Map() {
             target={[0, 0.35, 0]}
             maxPolarAngle={1.45}
           />
-          <PerspectiveCamera makeDefault fov={50} position={[6.191, 4.909, 2.280]} rotation={new Euler( -1.107, 0.882, 0.996, 'XYZ' )} />
+          <Camera />
 
           {/* <color attach="background" args={['##C0D1DB']} /> */}
 

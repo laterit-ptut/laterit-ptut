@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
+// import { useLoader } from "@react-three/fiber";
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+// import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { useGLTF } from '@react-three/drei'
 
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
+// import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 
 useGLTF.preload('/models/map_meshed_modifier.gltf')
 

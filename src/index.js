@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// const f = () => {
+//   document.documentElement.requestFullscreen();
+//   document.querySelector('html').removeEventListener('click', f); 
+// }
+// document.querySelector('html').addEventListener('click', f);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
