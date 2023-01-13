@@ -1,28 +1,29 @@
-import React, { Suspense, useRef, useState } from "react";
+import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Sky, Cloud } from "@react-three/drei";
-import { Euler, Vector3 } from "three";
+import { Euler } from "three";
 
-import { Ground } from './componentsMap/Ground';
+// import { Ground } from './componentsMap/Ground';
 import { Ocean } from './componentsMap/Water';
 import { ObjMap } from './componentsMap/ObjMap';
+import { Point } from './componentsMap/Point';
 
 import { Bezier } from "../utils/Bezier";
 
 export function Map() {
 
-  const bezPX = new Bezier();
-  const bezPZ = new Bezier();
-  const bezPY = new Bezier();
-
-  const bezRX = new Bezier();
-  const bezRZ = new Bezier();
-  const bezRY = new Bezier();
-
-  bezPY.setPoints(3, 8);
+  const axes = ['x', 'y', 'z'];
+  let bez = [];
+  // 6 courbes de bezier pour
+  // x, z, y position
+  // x, z, y rotation
+  for (let i = 0; i < 6; i++) { 
+    bez.push(new Bezier()) ;
+  }
 
   //debug activation
   const debug = true;
+  const points = [[40, 6, -30], [20, 6, -10], [-1, 6, 10]]
 
   const camera = useRef();
   const orbit = useRef();
@@ -33,13 +34,23 @@ export function Map() {
     console.log(camera.current.rotation);
   }
   function p1() {
-    bezPX.setPoints(camera.current.position.x, 0.42);
-    bezPZ.setPoints(camera.current.position.z, -8.80);
-    bezPY.setPoints(camera.current.position.y, 5.2);
+    moveTo([50, 120, -5], [-1.57, -5.90, -0.63])
+  }
 
-    bezRX.setPoints(camera.current.rotation.x, -2.63);
-    bezRZ.setPoints(camera.current.rotation.z, 3.11);
-    bezRY.setPoints(camera.current.rotation.y, 0.04);
+
+  function moveTo(position, rotation) {
+    //position
+    for (let i = 0; i < position.length; i++) {
+      bez[i].setPoints(camera.current.position[axes[i]], position[i]);
+    }
+    //rotation
+    for (let i = 0; i < position.length; i++) {
+      bez[i+3].setPoints(camera.current.rotation[axes[i]], rotation[i]);
+    }
+  }
+
+  function focusPoint(index) {
+    // moveTo(points[index], [-2.63, 0.04, 3.11]);
   }
 
   const Camera = () => {    
@@ -49,47 +60,28 @@ export function Map() {
         orbit.current.dispose();
       }
 
-      let px = bezPX.get();
-      if(px) {
-        camera.current.position.x = px;
+      //position
+      for (let i = 0; i < axes.length; i++) {
+        let coord = bez[i].get();
+        if(coord) {camera.current.position[axes[i]] = coord}
       }
-
-      let pz = bezPZ.get();
-      if(pz) {
-        camera.current.position.z = pz;
-      }
-
-      let py = bezPY.get();
-      if(py) {
-        camera.current.position.y = py;
-      }
-
-      let rx = bezRX.get();
-      if(rx) {
-        camera.current.rotation.x = rx;
-      }
-
-      let rz = bezRZ.get();
-      if(rz) {
-        camera.current.rotation.z = rz;
-      }
-
-      let ry = bezRY.get();
-      if(ry) {
-        camera.current.rotation.y = ry;
+      //rotation
+      for (let i = 0; i < axes.length; i++) {
+        let coord = bez[i+3].get();
+        if(coord) {camera.current.rotation[axes[i]] = coord}
       }
 
     });
 
     return <>
-      {/* <OrbitControls
+      <OrbitControls
         ref={orbit}
         maxPolarAngle={1.45}
-      /> */}
-      <PerspectiveCamera ref={camera} makeDefault fov={50} position={[6.191, 5, 2.280]} rotation={new Euler( -1.107, 0.882, 0.996, 'XYZ' )} />
+      />
+      <PerspectiveCamera ref={camera} makeDefault fov={50} position={[50, 120, -5]} rotation={[-1.57, -5.90, -0.63]} />
     </>
   }
-
+  let a = 1;
   return (
     <div className="Map">
       {(debug) &&
@@ -106,6 +98,10 @@ export function Map() {
           {/* <color attach="background" args={['##C0D1DB']} /> */}
 
           <ambientLight intensity={0.5} />
+
+          {points.map((point, index) =>
+            <Point key={index} position={point} index={index} url={'/icons/point.svg'} handleClick={(index) => focusPoint(index)} />
+          )}
 
           <spotLight
             color={[1, 0.25, 0.7]}

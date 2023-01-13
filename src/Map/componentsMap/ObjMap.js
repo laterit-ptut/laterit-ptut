@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // import { useLoader } from "@react-three/fiber";
 // import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 // import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei'
 
 // import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 
-const file = "map_meshed_modifier.gltf";
+const file = "map_with_all_textures.gltf";
 
 useGLTF.preload('/models/' + file)
 
@@ -22,5 +22,5 @@ export function ObjMap() {
   // const obj = useLoader(OBJLoader, '/models/')
   // const fbx = useLoader(FBXLoader, '/models/map_uncolored_fbx.fbx')
 
-  return <primitive object={t.scene} />;
+  return <primitive scale={5} position={[0, -10.3, 0]} object={t.scene} />;
 }
