@@ -42,7 +42,7 @@ export function Map() {
 
           <spotLight
             color={[1, 0.25, 0.7]}
-            intensity={1.5}
+            intensity={0}
             angle={10}
             penumbra={0.5}
             position={[5, 5, 0]}
@@ -51,7 +51,7 @@ export function Map() {
           />
           <spotLight
             color={[0.14, 0.5, 1]}
-            intensity={2}
+            intensity={0}
             angle={10}
             penumbra={0.5}
             position={[-5, 5, 0]}

@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei'
 
 // import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 
-const file = "map_meshed_modifier.gltf";
+const file = "map_with_all_textures.gltf";
 
 useGLTF.preload('/models/' + file)
 
