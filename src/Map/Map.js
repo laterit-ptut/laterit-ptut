@@ -50,7 +50,7 @@ export function Map() {
   }
 
   function focusPoint(index) {
-    // moveTo(points[index], [-2.63, 0.04, 3.11]);
+    moveTo(points[index], [-2.63, 0.04, 3.11]);
   }
 
   const Camera = () => {    
@@ -74,10 +74,10 @@ export function Map() {
     });
 
     return <>
-      <OrbitControls
+      {/* <OrbitControls
         ref={orbit}
         maxPolarAngle={1.45}
-      />
+      /> */}
       <PerspectiveCamera ref={camera} makeDefault fov={50} position={[50, 120, -5]} rotation={[-1.57, -5.90, -0.63]} />
     </>
   }
