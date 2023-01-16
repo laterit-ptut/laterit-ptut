@@ -1,10 +1,60 @@
 import './App.css';
-import {Map} from './Map/Map';
+import { useState, useEffect } from 'react'
+import PointPage from './Interface/componentsInterface/PointPage';
+import APropos from './Interface/componentsInterface/APropos';
+import { Map } from './Map/Map';
 
-function App() {
+const App = () => {
+	const [activePoint, setActivePoint] = useState(-1)
+	const [aProposIsActive, setAProposIsActive] = useState(-1)
+  const [data,setData]=useState([]);
+
+  const getData=()=>{
+    fetch('./test.json',{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    })
+    .then(function(response){
+      console.log(response)
+      return response.json();
+    })
+    .then(function(myJson) {
+      console.log(myJson);
+      setData(myJson)
+    });
+  }
+
+  useEffect(()=>{ getData() },[])
+
   return (
     <div className="App">
-      <Map />
+      {(activePoint !== -1) && 
+        <div className='Interface'>
+          {(Object.keys(data).length > 0) &&
+            <div className="content">
+              {(activePoint > -1) &&
+                <PointPage 
+                  data = {data.points[activePoint]}
+                  setActivePoint={setActivePoint}   
+                  activePoint={activePoint} >
+                </PointPage> 
+              }
+              {(aProposIsActive > -1) &&
+                <APropos 
+                  setAProposIsActive = {setAProposIsActive} >
+                </APropos> 
+              }
+              {/* <div className="div_test" >
+                <p className="point" onClick={() => setActivePoint(1)}>Point </p>
+                <p className="aPropos_link" onClick={() => setAProposIsActive(1)}> A Propos</p>
+              </div> */}
+            </div>
+          }
+        </div>
+      }
+      <Map setActivePoint={setActivePoint} activePoint={activePoint} />
     </div>
   );
 }

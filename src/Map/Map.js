@@ -11,7 +11,7 @@ import { Point } from './componentsMap/Point';
 
 import { Bezier } from "../utils/Bezier";
 
-export function Map() {
+export function Map({setActivePoint, activePoint}) {
 
   const axes = ['x', 'y', 'z'];
   let bez = [];
@@ -21,6 +21,8 @@ export function Map() {
   for (let i = 0; i < 6; i++) { 
     bez.push(new Bezier()) ;
   }
+  let cameraTravel = false;
+  let pointFocus = -1;
 
   //debug activation
   const debug = true;
@@ -48,6 +50,9 @@ export function Map() {
     for (let i = 0; i < position.length; i++) {
       bez[i+3].setPoints(camera.current.rotation[axes[i]], rotation[i]);
     }
+
+    pointFocus = 1;
+    cameraTravel = true;
   }
 
   function focusPoint(index) {
@@ -61,15 +66,24 @@ export function Map() {
         orbit.current.dispose();
       }
 
+      let value;
       //position
       for (let i = 0; i < axes.length; i++) {
-        let coord = bez[i].get();
-        if(coord) {camera.current.position[axes[i]] = coord}
+        value = bez[i].get();
+        if(value) {camera.current.position[axes[i]] = value}
       }
       //rotation
       for (let i = 0; i < axes.length; i++) {
-        let coord = bez[i+3].get();
-        if(coord) {camera.current.rotation[axes[i]] = coord}
+        value = bez[i+3].get();
+        if(value) {camera.current.rotation[axes[i]] = value}
+      }
+      if(value === false) {
+        cameraTravel = false;
+      }
+
+      if(!cameraTravel && pointFocus !== -1) {
+        setActivePoint(pointFocus);
+        console.log("c");
       }
 
     });
@@ -95,8 +109,9 @@ export function Map() {
       <Canvas shadows>
         <Suspense fallback={null}>
           <Stats />
-          {/* 
-          <Camera />          
+          <Camera />
+
+          {/* <color attach="background" args={['##C0D1DB']} /> */}
 
           <ambientLight intensity={0.5} />
 
@@ -125,10 +140,10 @@ export function Map() {
           <Cloud position={[-4, 10, -25]} speed={0.2} opacity={1} />
           <Cloud position={[10, 10, 10]} speed={0.2} opacity={1} />
           <fog attach="fog" args={['#C0D1DB', 500, 1000]} />
-          <Sky azimuth={0.1} turbidity={10} rayleigh={0.5} inclination={0.6} distance={1000} />
+          <Sky azimuth={0.1} turbidity={10} rayleigh={0.5} inclination={0.6} distance={1000} /> */}
           <Ocean />
           <ObjMap />
-          <Ground /> */}
+          {/* <Ground /> */}
         </Suspense>
       </Canvas>
     </div>

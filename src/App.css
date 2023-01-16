@@ -1,4 +1,10 @@
-.Map, .App {
+*{
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.Map, .App, .Interface {
   width: 100%;
   height: 100%;
 }
@@ -15,4 +21,178 @@
 
 .debug p {
   margin: 5px;
+}
+
+.App {
+  position: relative;
+}
+
+.Interface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.div_test {
+  color : black ; 
+  font-size: 4vw;
+  display: flex;
+  flex-direction: row;
+}
+
+h2 {
+  margin: 0.3vh 0;
+  font-size: 5vw;
+  font-family: 'Yatra One', cursive;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.go_map {
+  width: 130px !important;
+} 
+
+/* ---------------------------- PAGE POINT ---------------------------- */
+.pointPage {
+  width: 75%;
+  height: 70%;
+  background : rgba(27, 27, 27, 0.8) ;
+  padding: 5vw;
+  margin: auto;
+}
+
+.pointPage h2 {
+  font-size: 5vw;
+}
+
+.pointPage h3 {
+  font-size: 2vw;
+}
+
+.date {
+  padding-bottom: 1vh;
+}
+
+video {
+  width: 100%;
+  margin: 1vh 0;
+}
+
+.btn {
+  background: none;
+  border: none;
+  margin: 0 6vw ;
+}
+
+.links {
+  display: flex;
+  justify-content: center ;
+  padding: 0 4%;
+}
+
+.links .btn {
+  margin: 1vh auto;
+  width: 25vw;
+}
+
+.links img{
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center ;
+  margin: 6vw 0 ; 
+}
+
+.buttons img {
+  width: 9vw;
+}
+
+
+/* ---------------------------- A PROPOS ---------------------------- */
+
+.aPropos{
+  width: 75%;
+  height: 70%;
+  background : rgba(27, 27, 27, 0.8) ;
+  padding: 5vw;
+  margin: auto;
+}
+
+.scroll{
+  max-height: 50vh;
+  overflow-y: scroll;
+  margin: 2vh 0;
+}
+
+.scroll *{
+  margin: 1.5vh 0;
+}
+
+.aPropos h2{
+  font-size: 4vw;
+}
+
+.aPropos h3{
+  font-size: 2vw;
+}
+
+.aPropos p{
+  font-size: 1.8vw;
+}
+
+.article{
+    font-size: 1.7vw;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.auteur{  
+    font-size: 1.7vw;
+    text-align: right;
+    margin: 0.4vh 0 ;
+}
+
+.provenance{
+    font-size: 1.7vw;
+    margin-top: 0;
+    text-align: right;
+}
+
+.mcc_div{
+  display: flex;
+  margin: 2vh 0;
+  width: 100%;
+  flex-direction: column;
+}
+
+.mcc{
+  width: 80% !important;
+  margin: auto;
+}
+
+figcaption{
+  font-size: 1.7vw;
+  text-align: center;
+}
+ span{
+  font-weight: bold;
+ }
+
+.aPropos button{
+  width: 100%;
+  margin: 1vh auto;
 }

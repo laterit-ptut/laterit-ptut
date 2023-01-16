@@ -9,11 +9,12 @@ export function Point(props) {
   const mesh = useRef();
   const meshFocus = useRef();
   const meshBasicMaterial = useRef();
+  let mode = "down";
 
   const bez = new Bezier();
   bez.setPoints(7, 8);
   const bezO = new Bezier();
-  bezO.setPoints(0, 8);
+  bezO.setPoints(0, 1);
   
   useFrame((e) => {
     mesh.current.rotation.x = e.camera.rotation.x;
@@ -27,14 +28,19 @@ export function Point(props) {
     let coord = bez.get();
     if(coord) {meshFocus.current.position.y = mesh.current.position.y - coord}
     let opacity = bezO.get();
-    if(opacity) {meshBasicMaterial.opacity = opacity}
+    if(opacity) {meshBasicMaterial.current.opacity = opacity}
 
-    // console.log(opacity);
+    if(opacity >= 0.95 && mode === "down") {
+      mode = "up";
+      bez.setPoints(8, 7);
+      bezO.setPoints(1, 0);
+    }
 
-    // // if(opacity == 1) {
-    // //   bez.setPoints(8, 7);
-    // //   bezO.setPoints(8, 0);
-    // // }
+    if(opacity < 0.05 && mode === "up") {
+      mode = "down";
+      bez.setPoints(7, 8);
+      bezO.setPoints(0, 1);
+    }
 
   });
 

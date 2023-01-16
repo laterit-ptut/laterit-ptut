@@ -1,0 +1,104 @@
+{
+    "points" : [
+      {
+        "name" : {
+          "mg" : "Anosizato",
+          "fr" : "Ile des cents sur la brise",
+          "en" : "Hundred island on the wave"
+        },
+        "text" : {
+          "mg" : "desMG",
+          "fr" : "Le fleuve IKOPA qui traverse tana sert de transport, sert a fournir le sable pour le batiments et aux lavandieres",
+          "en" : "desEN"
+        },
+        
+        "latitude" : 19.642588,
+        "longitude" : 46.801060,
+        "videos" : [
+          {
+            "pathFile" : "IKOPA_01_TanaN1.mp4",
+            "pathThumbnail" : "IKOPA_01_TanaN1.jpg", 
+            "date" : "12/06/1989"
+          },
+          {
+            "pathFile" : "IKOPA_02_FilleRougeLave.mp4",
+            "pathThumbnail" : "IKOPA_02_FilleRougeLave.jpg", 
+            "date" : "12/06/1989"
+          },
+          {
+            "pathFile" : "IKOPA_03_PiroguierSable.mp4",
+            "pathThumbnail" : "IKOPA_03_PiroguierSable.jpg", 
+            "date" : "12/06/1989"
+          }
+        ]
+      },
+      
+      {
+        "name" : {
+          "mg" : "Ambila Lemaitso",
+          "fr" : "The green curve",
+          "en" : "Le virage vert"
+        },
+        "text" : {
+          "mg" : "desMG",
+          "fr" : "Le bac sur le fleuve était encore manoeuvré à la perche ",
+          "en" : "desEN"
+        },
+        
+        "latitude" : 19.642588,
+        "longitude" : 46.801060,
+        "videos" : [
+          {
+            "pathFile" : "IKOPA_01_TanaN1.mp4",
+            "pathThumbnail" : "IKOPA_01_TanaN1.jpg", 
+            "date" : "12/06/199"
+          },
+          {
+            "pathFile" : "IKOPA_02_FilleRougeLave.mp4",
+            "pathThumbnail" : "IKOPA_02_FilleRougeLave.jpg", 
+            "date" : "12/06/1989"
+          },
+          {
+            "pathFile" : "IKOPA_03_PiroguierSable.mp4",
+            "pathThumbnail" : "IKOPA_03_PiroguierSable.jpg", 
+            "date" : "12/06/989"
+          }
+        ]
+      },
+      
+      {
+        "name" : {
+          "mg" : "Ambila test2",
+          "fr" : "The green curve",
+          "en" : "Le virage vert"
+        },
+        "text" : {
+          "mg" : "desMG",
+          "fr" : "Le bac sur le fleuve était encore manoeuvré à la perche ",
+          "en" : "desEN"
+        },
+        
+        "latitude" : 19.642588,
+        "longitude" : 46.801060,
+        "videos" : [
+          {
+            "pathFile" : "IKOPA_01_TanaN1.mp4",
+            "pathThumbnail" : "IKOPA_01_TanaN1.jpg", 
+            "date" : "12/06/1989"
+          },
+          {
+            "pathFile" : "IKOPA_02_FilleRougeLave.mp4",
+            "pathThumbnail" : "IKOPA_02_FilleRougeLave.jpg", 
+            "date" : "12/06/1989"
+          },
+          {
+            "pathFile" : "IKOPA_03_PiroguierSable.mp4",
+            "pathThumbnail" : "IKOPA_03_PiroguierSable.jpg", 
+            "date" : "12/06/1989"
+          }
+        ]
+      }
+  
+  
+    ]
+  }
