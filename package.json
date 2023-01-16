@@ -21,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "laterit": "serve -s build"
+    "laterit": "serve -s build",
+    "deploy": "push-dir --dir=build --branch=gh-pages --cleanup"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "push-dir": "^0.4.1",
     "serve": "^14.1.2"
   }
 }
