@@ -2,6 +2,7 @@ import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Sky, Cloud } from "@react-three/drei";
 import { Euler } from "three";
+import { Stats } from "@react-three/drei";
 
 // import { Ground } from './componentsMap/Ground';
 import { Ocean } from './componentsMap/Water';
@@ -74,10 +75,10 @@ export function Map() {
     });
 
     return <>
-      {/* <OrbitControls
+      <OrbitControls
         ref={orbit}
         maxPolarAngle={1.45}
-      /> */}
+      />
       <PerspectiveCamera ref={camera} makeDefault fov={50} position={[50, 120, -5]} rotation={[-1.57, -5.90, -0.63]} />
     </>
   }
@@ -93,6 +94,7 @@ export function Map() {
       }
       <Canvas shadows>
         <Suspense fallback={null}>
+          <Stats />
           <Camera />
 
           {/* <color attach="background" args={['##C0D1DB']} /> */}
