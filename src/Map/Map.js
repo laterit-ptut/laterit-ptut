@@ -95,9 +95,8 @@ export function Map() {
       <Canvas shadows>
         <Suspense fallback={null}>
           <Stats />
-          <Camera />
-
-          {/* <color attach="background" args={['##C0D1DB']} /> */}
+          {/* 
+          <Camera />          
 
           <ambientLight intensity={0.5} />
 
@@ -129,7 +128,7 @@ export function Map() {
           <Sky azimuth={0.1} turbidity={10} rayleigh={0.5} inclination={0.6} distance={1000} />
           <Ocean />
           <ObjMap />
-          {/* <Ground /> */}
+          <Ground /> */}
         </Suspense>
       </Canvas>
     </div>
