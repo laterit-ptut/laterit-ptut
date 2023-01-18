@@ -30,7 +30,23 @@
             "pathThumbnail" : "IKOPA_03_PiroguierSable.jpg", 
             "date" : "12/06/1989"
           }
-        ]
+        ],
+
+        "proverbes" : {
+          "mg" : {
+            "text" : "Arivo tatatra, zato renirano; faran' ny rano Ikopa ihany. [Houlder 1895 #456, Cousins 1885] ", 
+            "pathFile" : "testM.wav"
+          },
+          "fr" : {
+            "text" : "Thousands of streams, hundreds of rivers all end in the same waters : the Ikopa ", 
+            "pathFile" : "test.wav"
+          },
+          "en" : {
+            "text" : "Mille canaux, cent rivières: leur fin à tous est l' Ikopa.  [Houlder 1895]  (2eme sens : Le mensonge finit toujours par être dévoilé. ", 
+            "pathFile" : "test.wav"
+          }
+        }
+
       },
       
       {
@@ -54,21 +70,36 @@
             "date" : "12/06/199"
           },
           {
-            "pathFile" : "IKOPA_02_FilleRougeLave.mp4",
-            "pathThumbnail" : "IKOPA_02_FilleRougeLave.jpg", 
+            "pathFile" : "IKOPA_01_TanaN1.mp4",
+            "pathThumbnail" : "IKOPA_01_TanaN1.jpg", 
             "date" : "12/06/1989"
           },
           {
-            "pathFile" : "IKOPA_03_PiroguierSable.mp4",
-            "pathThumbnail" : "IKOPA_03_PiroguierSable.jpg", 
+            "pathFile" : "IKOPA_01_TanaN1.mp4",
+            "pathThumbnail" : "IKOPA_01_TanaN1.jpg", 
             "date" : "12/06/989"
           }
-        ]
+        ],
+
+        "proverbes" : {
+          "mg" : {
+            "text" : "Arivo tatatra, zato renirano; faran' ny rano Ikopa ihany. [Houlder 1895 #456, Cousins 1885] ", 
+            "pathFile" : "testM.wav"
+          },
+          "fr" : {
+            "text" : "Thousands of streams, hundreds of rivers all end in the same waters : the Ikopa ", 
+            "pathFile" : "testM.wav"
+          },
+          "en" : {
+            "text" : "Mille canaux, cent rivières: leur fin à tous est l' Ikopa.  [Houlder 1895]  (2eme sens : Le mensonge finit toujours par être dévoilé. ", 
+            "pathFile" : "testM.wav"
+          }
+        }
       },
       
       {
         "name" : {
-          "mg" : "Ambila test2",
+          "mg" : "Fasina",
           "fr" : "The green curve",
           "en" : "Le virage vert"
         },
@@ -82,21 +113,36 @@
         "longitude" : 46.801060,
         "videos" : [
           {
-            "pathFile" : "IKOPA_01_TanaN1.mp4",
-            "pathThumbnail" : "IKOPA_01_TanaN1.jpg", 
+            "pathFile" : "FASINA_01_PecheFilet.mp4",
+            "pathThumbnail" : "FASINA_01bis_PecheFilet.jpg", 
             "date" : "12/06/1989"
           },
           {
-            "pathFile" : "IKOPA_02_FilleRougeLave.mp4",
-            "pathThumbnail" : "IKOPA_02_FilleRougeLave.jpg", 
+            "pathFile" : "FASINA_02_PisoVaisselle.mp4",
+            "pathThumbnail" : "FASINA_02bis_PisoVaisselle2.jpg", 
             "date" : "12/06/1989"
           },
           {
-            "pathFile" : "IKOPA_03_PiroguierSable.mp4",
-            "pathThumbnail" : "IKOPA_03_PiroguierSable.jpg", 
+            "pathFile" : "FASINA_03_ZebuDansLeau.mp4",
+            "pathThumbnail" : "FASINA_03_ZebuDansLeau.jpg", 
             "date" : "12/06/1989"
           }
-        ]
+        ], 
+
+        "proverbes" : {
+          "mg" : {
+            "text" : "Arivo tatatra, zato renirano; faran' ny rano Ikopa ihany. [Houlder 1895 #456, Cousins 1885] ", 
+            "pathFile" : "test.wav"
+          },
+          "fr" : {
+            "text" : "Thousands of streams, hundreds of rivers all end in the same waters : the Ikopa ", 
+            "pathFile" : "test.wav"
+          },
+          "en" : {
+            "text" : "Mille canaux, cent rivières: leur fin à tous est l' Ikopa.  [Houlder 1895]  (2eme sens : Le mensonge finit toujours par être dévoilé. ", 
+            "pathFile" : "test.wav"
+          }
+        }
       }
   
   
