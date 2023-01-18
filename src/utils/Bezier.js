@@ -23,5 +23,8 @@ export class Bezier {
       return false;
     }
   }
+  changeFramerate(fps) {
+    this.frames = this.frames * fps / 144; // 144: my dev framerate
+  }
 }
   

@@ -1,0 +1,49 @@
+.Loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.5s ease-in-out background-color;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.Loader.loaded {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.Loader .progress {
+    position: relative;
+    width: 15vh;
+    height: 15vh;
+    opacity: 1;
+    transition: 0.5s ease-in-out 1s opacity;
+}
+
+.Loader.loaded .progress {
+    opacity: 0;
+}
+
+.Loader .icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Loader .icon img {
+    height: 80%;
+}
+
+.Loader .icon.mask {
+    background-color: #03B857;
+    clip-path: polygon(0 0, var(--width) 0, var(--width) 100%, 0% 100%);
+}
