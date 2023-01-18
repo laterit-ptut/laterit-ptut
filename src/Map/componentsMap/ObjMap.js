@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei'
 
 // import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 
-const file = "last_map.gltf";
+const file = "river_map.gltf";
 
 useGLTF.preload('/models/' + file)
 
@@ -22,5 +22,5 @@ export function ObjMap() {
   // const obj = useLoader(OBJLoader, '/models/')
   // const fbx = useLoader(FBXLoader, '/models/map_uncolored_fbx.fbx')
 
-  return <primitive object={t.scene} />;
+  return <primitive scale={5}  position={[0, -10.3, 0]} object={t.scene} />;
 }
