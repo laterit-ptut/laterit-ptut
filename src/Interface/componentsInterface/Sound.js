@@ -5,8 +5,8 @@ function Sound({data, activePoint, playSound, setPlaySound}) {
 	const [translateSound, setTranslateSound] = useState(new Audio("/medias/sons/" + data.proverbes.fr.pathFile)) ; 
 	const [sound, setSound] = useState(new Audio("/medias/sons/" + data.proverbes.mg.pathFile)) ;  
 	
-	const [soundIcon, setSoundIcon] = useState("/medias/images/on.png") ; 
-	const [soundIconT, setSoundIconT] = useState("/medias/images/on.png") ; 
+	const [soundIcon, setSoundIcon] = useState("/medias/images/play.png") ; 
+	const [soundIconT, setSoundIconT] = useState("/medias/images/play.png") ; 
 
 	const [activeSound, setActiveSound] = useState(0) ; 
 
@@ -63,14 +63,14 @@ function Sound({data, activePoint, playSound, setPlaySound}) {
         play(translateSound);
         
         if (playSound == 0) { 
-                setSoundIconT("/medias/images/off.png");   
+                setSoundIconT("/medias/images/pause.png");   
         }
         else if (playSound == 1 && translateSound == activeSound) { 
-                setSoundIconT("/medias/images/on.png");  
+                setSoundIconT("/medias/images/play.png");  
         }
         else if (playSound == 1 && sound == activeSound) { 
-                setSoundIcon("/medias/images/on.png");  
-                setSoundIconT("/medias/images/off.png");   
+                setSoundIcon("/medias/images/play.png");  
+                setSoundIconT("/medias/images/pause.png");   
         }
     }
 
@@ -78,14 +78,14 @@ function Sound({data, activePoint, playSound, setPlaySound}) {
         play(sound);
 
         if (playSound == 0) { 
-                setSoundIcon("/medias/images/off.png");   
+                setSoundIcon("/medias/images/pause.png");   
         }
         else if (playSound == 1 && sound == activeSound) { 
-                setSoundIcon("/medias/images/on.png");  
+                setSoundIcon("/medias/images/play.png");  
         }
         else if (playSound == 1 && translateSound == activeSound) { 
-                setSoundIcon("/medias/images/off.png");  
-                setSoundIconT("/medias/images/on.png");   
+                setSoundIcon("/medias/images/pause.png");  
+                setSoundIconT("/medias/images/play.png");   
         }
     }
 
