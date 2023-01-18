@@ -10,6 +10,8 @@ import { Point } from './componentsMap/Point';
 
 import { Bezier } from "../utils/Bezier";
 
+import { ResizeObserver } from '@juggle/resize-observer';
+
 export function Map({setActivePoint, activePoint}) {
 
   //GET FRAMERATE
@@ -115,7 +117,7 @@ export function Map({setActivePoint, activePoint}) {
     });
 
     return <>
-      {/* <OrbitControls maxPolarAngle={1.45}/> */}
+      <OrbitControls maxPolarAngle={1.45}/>
       <PerspectiveCamera ref={camera} makeDefault fov={50} position={[-0.53, 168, 2.54]} rotation={[-1.57, 0, -0.43]} />
     </>
   }
@@ -128,7 +130,7 @@ export function Map({setActivePoint, activePoint}) {
           <button onClick={p1}>p1</button>
         </div>
       }
-      <Canvas shadows>
+      <Canvas shadows resize={{ polyfill: ResizeObserver }}>
         <Suspense fallback={null}>
           <Stats />
           <Camera />
