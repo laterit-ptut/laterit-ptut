@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Sky, Cloud } from "@react-three/drei";
 import { Stats } from "@react-three/drei";
@@ -14,6 +14,18 @@ import { ResizeObserver } from '@juggle/resize-observer';
 
 export function Map({setActivePoint, activePoint}) {
 
+  const axes = ['x', 'y', 'z'];
+  const [bez, setBez] = useState([]);
+  const [fpsCount, setFpsCount] = useState([]);
+  let cameraTravel = false;
+  let pointFocus = -1;
+
+  //debug activation
+  const debug = false;
+  const points = [[40, 6, -30], [20, 6, -10], [-1, 6, 10]]
+
+  const camera = useRef();
+
   //GET FRAMERATE
   let t = [];
   let test;
@@ -22,14 +34,15 @@ export function Map({setActivePoint, activePoint}) {
       t.unshift(now);
       if (t.length > 10) {
           let t0 = t.pop();
-          let fps = Math.floor(1000 * 10 / (now - t0));
           if(test) {
             if(i < 0) {
+              let fps = Math.floor(1000 * 10 / (now - t0));
               test = false;
               console.log(fps + ' fps');
               for (let i = 0; i < bez.length; i++) {
                 bez[i].changeFramerate(fps);
               }
+              setFpsCount(fps);
             }
             i--;
           }          
@@ -42,24 +55,16 @@ export function Map({setActivePoint, activePoint}) {
 
   useEffect(() => {
     test = true;
-  }, [])
-
-  const axes = ['x', 'y', 'z'];
-  let bez = [];
-  // 6 courbes de bezier pour
-  // x, z, y position
-  // x, z, y rotation
-  for (let i = 0; i < 6; i++) { 
-    bez.push(new Bezier()) ;
-  }
-  let cameraTravel = false;
-  let pointFocus = -1;
-
-  //debug activation
-  const debug = false;
-  const points = [[40, 6, -30], [20, 6, -10], [-1, 6, 10]]
-
-  const camera = useRef();
+    // 6 courbes de bezier pour
+    // x, z, y position
+    // x, z, y rotation
+    let tabBez = [];
+    for (let i = 0; i < 6; i++) {      
+      tabBez.push(new Bezier());
+    }
+    setBez(tabBez);
+    console.log("cre");
+  }, []);
 
   //debug functions
   function getCamera() {
@@ -94,19 +99,21 @@ export function Map({setActivePoint, activePoint}) {
 
     useFrame(() => {
 
-      let value;
-      //position
-      for (let i = 0; i < axes.length; i++) {
-        value = bez[i].get();
-        if(value) {camera.current.position[axes[i]] = value}
-      }
-      //rotation
-      for (let i = 0; i < axes.length; i++) {
-        value = bez[i+3].get();
-        if(value) {camera.current.rotation[axes[i]] = value}
-      }
-      if(value === false) {
-        cameraTravel = false;
+      if(bez.length > 1) {//wait for initialisation
+        let value;
+        //position
+        for (let i = 0; i < axes.length; i++) {
+          value = bez[i].get();
+          if(value) {camera.current.position[axes[i]] = value}
+        }
+        //rotation
+        for (let i = 0; i < axes.length; i++) {
+          value = bez[i+3].get();
+          if(value) {camera.current.rotation[axes[i]] = value}
+        }
+        if(value === false) {
+          cameraTravel = false;
+        }
       }
 
       if(!cameraTravel && pointFocus !== -1) {
@@ -140,7 +147,7 @@ export function Map({setActivePoint, activePoint}) {
           <ambientLight intensity={0.5} />
 
           {points.map((point, index) =>
-            <Point key={index} position={point} index={index} url={'/icons/point.svg'} handleClick={(index) => focusPoint(index)} />
+            <Point key={index} position={point} index={index} fpsCount={fpsCount} url={'/icons/point.svg'} handleClick={(index) => focusPoint(index)} />
           )}
 
           <spotLight

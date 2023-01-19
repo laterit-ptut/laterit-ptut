@@ -1,9 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { Bezier } from '../../utils/Bezier';
 
-export function Point(props) {
+export function Point({position, handleClick, index, fpsCount}) {
   const texture = useLoader(TextureLoader, '/icons/point.png');
   const focus = useLoader(TextureLoader, '/icons/pointfocus.png');
   const mesh = useRef();
@@ -11,10 +11,18 @@ export function Point(props) {
   const meshBasicMaterial = useRef();
   let mode = "down";
 
-  const bez = new Bezier();
-  bez.setPoints(7, 8);
-  const bezO = new Bezier();
-  bezO.setPoints(0, 1);
+  const [bez, setBez] = useState(new Bezier());
+  const [bezO, setBezO] = useState(new Bezier());
+
+  useEffect(() => {
+    bez.setPoints(7, 7.5);
+    bezO.setPoints(0, 1);
+  }, [])
+
+  useEffect(() => {
+    bez.changeFramerate(fpsCount);
+    bezO.changeFramerate(fpsCount);
+  }, [fpsCount])
   
   useFrame((e) => {
     mesh.current.rotation.x = e.camera.rotation.x;
@@ -32,20 +40,20 @@ export function Point(props) {
 
     if(opacity >= 0.95 && mode === "down") {
       mode = "up";
-      bez.setPoints(8, 7);
+      bez.setPoints(7.5, 7);
       bezO.setPoints(1, 0);
     }
 
     if(opacity < 0.05 && mode === "up") {
       mode = "down";
-      bez.setPoints(7, 8);
+      bez.setPoints(7, 7.5);
       bezO.setPoints(0, 1);
     }
 
   });
 
   return <>
-    <mesh ref={mesh} scale={1} position={props.position} onClick={(e) => props.handleClick(props.index)}>
+    <mesh ref={mesh} scale={1} position={position} onClick={(e) => handleClick(index)}>
       <planeBufferGeometry attach="geometry" args={[4, 4]} />
       <meshBasicMaterial  attach="material" map={texture} transparent />
       <mesh ref={meshFocus} scale={1}>

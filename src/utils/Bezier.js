@@ -5,7 +5,7 @@ export class Bezier {
   bez = new bezier(.5,-0.01,.5,1);
   a = 0;
   b = 0;
-  anim = 0;
+  anim = 500;
   frames = 500;
 
   setPoints(a, b) {
@@ -17,7 +17,7 @@ export class Bezier {
   get() {
     if(this.anim < this.frames) {
       let coord = this.a - this.bez(1/this.frames * this.anim) * (this.a - this.b);
-      this.anim++
+      this.anim++;
       return coord;
     }else {
       return false;
@@ -25,6 +25,7 @@ export class Bezier {
   }
   changeFramerate(fps) {
     this.frames = this.frames * fps / 144; // 144: my dev framerate
+    this.anim = this.frames * fps / 144;
   }
 }
   
