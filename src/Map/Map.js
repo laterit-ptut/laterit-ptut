@@ -9,8 +9,10 @@ import { ObjMap } from './componentsMap/ObjMap';
 import { Point } from './componentsMap/Point';
 
 import { Bezier } from "../utils/Bezier";
+import { BezierProvider } from "../utils/BezierProvider";
 
 import { ResizeObserver } from '@juggle/resize-observer';
+
 
 export function Map({setActivePoint, activePoint}) {
 
@@ -18,18 +20,17 @@ export function Map({setActivePoint, activePoint}) {
   let t = [];
   let test;
   let i = 100; // get framerate after 100 epoch
+  let fps; 
   function animate(now) {
       t.unshift(now);
       if (t.length > 10) {
           let t0 = t.pop();
-          let fps = Math.floor(1000 * 10 / (now - t0));
           if(test) {
             if(i < 0) {
+              fps = Math.floor(1000 * 10 / (now - t0));
               test = false;
               console.log(fps + ' fps');
-              for (let i = 0; i < bez.length; i++) {
-                bez[i].changeFramerate(fps);
-              }
+              BezierProvider.changeFramerate(fps);
             }
             i--;
           }          
@@ -49,9 +50,11 @@ export function Map({setActivePoint, activePoint}) {
   // 6 courbes de bezier pour
   // x, z, y position
   // x, z, y rotation
-  for (let i = 0; i < 6; i++) { 
+  for (let i = 0; i < 6; i++) {
     bez.push(new Bezier()) ;
   }
+  BezierProvider.beziers["map"] = bez;
+  
   let cameraTravel = false;
   let pointFocus = -1;
 
@@ -70,15 +73,14 @@ export function Map({setActivePoint, activePoint}) {
     moveTo([-0.53, 168, 2.54], [-1.57, 0, -0.43])
   }
 
-
   function moveTo(position, rotation) {
     //position
     for (let i = 0; i < position.length; i++) {
-      bez[i].setPoints(camera.current.position[axes[i]], position[i]);
+      BezierProvider.beziers["map"][i].setPoints(camera.current.position[axes[i]], position[i]);
     }
     //rotation
     for (let i = 0; i < rotation.length; i++) {
-      bez[i+3].setPoints(camera.current.rotation[axes[i]], rotation[i]);
+      BezierProvider.beziers["map"][i+3].setPoints(camera.current.rotation[axes[i]], rotation[i]);
     }
 
     pointFocus = 1;
@@ -93,16 +95,15 @@ export function Map({setActivePoint, activePoint}) {
   const Camera = () => {    
 
     useFrame(() => {
-
       let value;
       //position
       for (let i = 0; i < axes.length; i++) {
-        value = bez[i].get();
+        value = BezierProvider.beziers["map"][i].get();
         if(value) {camera.current.position[axes[i]] = value}
       }
       //rotation
       for (let i = 0; i < axes.length; i++) {
-        value = bez[i+3].get();
+        value = BezierProvider.beziers["map"][i+3].get();
         if(value) {camera.current.rotation[axes[i]] = value}
       }
       if(value === false) {
@@ -140,7 +141,7 @@ export function Map({setActivePoint, activePoint}) {
           <ambientLight intensity={0.5} />
 
           {points.map((point, index) =>
-            <Point key={index} position={point} index={index} url={'/icons/point.svg'} handleClick={(index) => focusPoint(index)} />
+            <Point key={index} position={point} index={index} handleClick={(index) => focusPoint(index)} />
           )}
 
           <spotLight
