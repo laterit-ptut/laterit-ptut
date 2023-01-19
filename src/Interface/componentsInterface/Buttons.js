@@ -7,7 +7,7 @@ function Buttons({setActivePoint, index}) {
 		  index = -1 ; 
 	  }
 		else {
-			index = Math.abs(index+nb)%3 ; 
+			index = Math.abs(index+nb)%10 ; 
 		}
     setActivePoint(index); 
 	}

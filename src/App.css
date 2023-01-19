@@ -49,14 +49,14 @@
 
 .div_test {
   color : black ; 
-  font-size: 4vw;
+  font-size: 1vh;
   display: flex;
   flex-direction: row;
 }
 
 h2 {
   margin: 0;
-  font-size: 5vw;
+  font-size: 5vh;
   font-family: 'Yatra One', cursive;
 }
 
@@ -65,30 +65,30 @@ h3 {
 }
 
 p {
-  font-size: 2vw;
+  font-size: 1.2vh;
 }
 
 
 .go_map {
-  width: 110px !important;
+  width: 9vh !important;
 } 
 
 
 /* ---------------------------- PAGE POINT ---------------------------- */
 .pointPage {
   width: 75%;
-  height: 78%;
+  height: 80%;
   background : rgba(27, 27, 27, 0.8) ;
-  padding: 5vw;
+  padding: 3vh;
   margin: auto;
 }
 
 .pointPage h2 {
-  font-size: 5vw;
+  font-size: 3.8vh;
 }
 
 .pointPage h3 {
-  font-size: 2vw;
+  font-size: 1.5vh;
 }
 
 video {
@@ -103,7 +103,7 @@ video {
 .btn {
   background: none;
   border: none;
-  margin: 0 6vw ;
+  margin: 0 1vh ;
 }
 
 .links {
@@ -114,7 +114,7 @@ video {
 
 .links .btn {
   margin: 1vh auto;
-  width: 25vw;
+  width: 13vh;
 }
 
 .links img{
@@ -124,15 +124,16 @@ video {
 .buttons {
   display: flex;
   justify-content: center ;
-  margin: 2vh 0 ; 
+  margin: 1vh 0 ; 
 }
 
 .buttons img {
-  width: 7vw;
+  margin: 0 1vh ; 
+  width: 6vh ;
 }
 
 .sound {
-  margin: 1vh 2vw;
+  margin: 1vh 2vh;
   display: flex;
   flex-direction: column;
 }
@@ -145,10 +146,11 @@ video {
 
 .proverbe{
   width: 85%;
+  margin: 0.7vh 0.6vh 0.7vh 0;
 }
 
 .sound img{
-  width: 2vw;
+  width: 1.8vh;
 }
 
 /* ---------------------------- A PROPOS ---------------------------- */
@@ -157,7 +159,7 @@ video {
   width: 75%;
   height: 70%;
   background : rgba(27, 27, 27, 0.8) ;
-  padding: 5vw;
+  padding: 5vh;
   margin: auto;
 }
 
@@ -172,31 +174,27 @@ video {
 }
 
 .aPropos h2{
-  font-size: 4vw;
+  font-size: 3.8vh;
 }
 
 .aPropos h3{
-  font-size: 2vw;
-}
-
-.aPropos p{
-  font-size: 1.8vw;
+  font-size: 2vh;
 }
 
 .article{
-    font-size: 1.7vw;
+    font-size: 1.3vh;
     margin-bottom: 0;
     text-align: center;
 }
 
 .auteur{  
-    font-size: 1.7vw;
+    font-size: 1.3vh;
     text-align: right;
     margin: 0.4vh 0 ;
 }
 
 .provenance{
-    font-size: 1.7vw;
+    font-size: 1.3vh;
     margin-top: 0;
     text-align: right;
 }
@@ -214,7 +212,7 @@ video {
 }
 
 figcaption{
-  font-size: 1.7vw;
+  font-size: 1.3vh;
   text-align: center;
 }
  span{
