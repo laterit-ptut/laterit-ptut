@@ -1,12 +1,16 @@
 import React, { Suspense, useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera, Sky, Cloud } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, Sky } from "@react-three/drei";
 import { Stats } from "@react-three/drei";
+import { AxesHelper } from "three";
 
 // import { Ground } from './componentsMap/Ground';
 import { Ocean } from './componentsMap/Water';
 import { ObjMap } from './componentsMap/ObjMap';
 import { Point } from './componentsMap/Point';
+import { Clouds } from './componentsMap/Clouds';
+import { MyCloud } from './componentsMap/MyCloud';
+import { Props } from './componentsMap/Props';
 
 import { Bezier } from "../utils/Bezier";
 import { BezierProvider } from "../utils/BezierProvider";
@@ -57,9 +61,18 @@ export function Map({setActivePoint, activePoint}) {
   
   let cameraTravel = false;
   let pointFocus = -1;
+  const p0 = {
+    position : [16, 176, 4],
+    rotation : [-1.57, 0, 0.1]
+  }
+
+  // const p0 = {
+  //   position : [-0.99, 6, 19.99],
+  //   rotation : [-0.42, 0, 0]
+  // }
 
   //debug activation
-  const debug = false;
+  const debug = true;
   const points = [[40, 6, -30], [20, 6, -10], [-1, 6, 10]]
 
   const camera = useRef();
@@ -69,8 +82,8 @@ export function Map({setActivePoint, activePoint}) {
     console.log(camera.current.position);
     console.log(camera.current.rotation);
   }
-  function p1() {
-    moveTo([-0.53, 168, 2.54], [-1.57, 0, -0.43])
+  function moveToP0() {
+    moveTo(p0.position, p0.rotation)
   }
 
   function moveTo(position, rotation) {
@@ -88,8 +101,8 @@ export function Map({setActivePoint, activePoint}) {
   }
 
   function focusPoint(index) {
-    // moveTo(points[index], [-0.48, -0.75, -0.34]);
-    moveTo(points[index], [-0.550, -0.506, -0.289]);
+    let position = [points[index][0], points[index][1], points[index][2] + 10]
+    moveTo(position, [-0.420, 0, 0]);
   }
 
   const Camera = () => {    
@@ -118,8 +131,8 @@ export function Map({setActivePoint, activePoint}) {
     });
 
     return <>
-      <OrbitControls maxPolarAngle={1.45}/>
-      <PerspectiveCamera ref={camera} makeDefault fov={50} position={[-0.53, 168, 2.54]} rotation={[-1.57, 0, -0.43]} />
+      {/* <OrbitControls maxPolarAngle={1.45}/> */}
+      <PerspectiveCamera ref={camera} makeDefault fov={50} position={p0.position} rotation={p0.rotation} />
     </>
   }
   return (
@@ -128,12 +141,14 @@ export function Map({setActivePoint, activePoint}) {
         <div className="debug">
           <p>debug</p>
           <button onClick={getCamera}>Coords cam</button>
-          <button onClick={p1}>p1</button>
+          <button onClick={moveToP0}>p0</button>
         </div>
       }
       <Canvas shadows resize={{ polyfill: ResizeObserver }}>
         <Suspense fallback={null}>
-          <Stats />
+          {(debug) &&
+            <Stats />
+          }
           <Camera />
 
           {/* <color attach="background" args={['##C0D1DB']} /> */}
@@ -162,12 +177,16 @@ export function Map({setActivePoint, activePoint}) {
             castShadow
             shadow-bias={-0.0001}
           />
-          <Cloud position={[-4, 10, -25]} speed={0.2} opacity={1} />
-          <Cloud position={[10, 10, 10]} speed={0.2} opacity={1} />
-          {/* <fog attach="fog" args={['#C0D1DB', 200, 300]} /> */}
+          {/* <fog attach="fog" args={['#C0D1DB', 200, 250]} /> */}
           <Sky azimuth={0.1} turbidity={10} rayleigh={0.5} inclination={0.6} distance={1000} />
+          {/* <Clouds /> */}
+          <MyCloud p0={p0} />
           <Ocean />
           <ObjMap />
+          <Props file={"voiture/voiture.gltf"} position={[1, 1, 10]} scale={0.25} rotation={[0.15, -0.5, 0]} />
+          {(debug) &&
+            <primitive position={[0, 20, 0]} object={new AxesHelper(10)} />
+          }
           {/* <Ground /> */}
         </Suspense>
       </Canvas>

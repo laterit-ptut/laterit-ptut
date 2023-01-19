@@ -21,10 +21,10 @@ export function Point({position, index, handleClick}) {
 
   BezierProvider.beziers["point" + index] = bez;
   
-  useFrame((e) => {
-    mesh.current.rotation.x = e.camera.rotation.x;
-    mesh.current.rotation.y = e.camera.rotation.y;
-    mesh.current.rotation.z = e.camera.rotation.z;
+  useFrame((state) => {
+    mesh.current.rotation.x = state.camera.rotation.x;
+    mesh.current.rotation.y = state.camera.rotation.y;
+    mesh.current.rotation.z = state.camera.rotation.z;
     meshFocus.current.scale.y = 0.53;
 
     //animation focus
@@ -49,15 +49,15 @@ export function Point({position, index, handleClick}) {
     //animation opacity with camera down
     let max = 100;
     let min = 50;
-    if(e.camera.position.y < max) {
-      opacity = 1 - ((max - e.camera.position.y) / (max - min));
+    if(state.camera.position.y < max) {
+      opacity = 1 - ((max - state.camera.position.y) / (max - min));
       meshBasicMaterial.current.opacity = opacity;
       meshFocusBasicMaterial.current.opacity = opacity;
     }
   });
 
   return <>
-    <mesh ref={mesh} scale={1} position={position} onClick={(e) => handleClick(index)}>
+    <mesh ref={mesh} scale={1.3} position={position} onClick={(e) => handleClick(index)}>
       <planeBufferGeometry attach="geometry" args={[4, 4]} />
       <meshBasicMaterial ref={meshBasicMaterial}  attach="material" map={texture} transparent />
       <mesh ref={meshFocus} scale={1}>
