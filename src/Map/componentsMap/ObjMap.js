@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei'
 
 // import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 
-const file = "last_map.gltf";
+const file = "madagascar_test_height_map.gltf";
 
 useGLTF.preload('/models/' + file)
 
