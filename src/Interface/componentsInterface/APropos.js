@@ -33,7 +33,7 @@ function APropos({setAProposIsActive}) {
 			</div>
            
 			<button className='btn'>
-				<img className="go_map" alt="go_map" src={"/medias/images/center.png"} onClick={() => setAProposIsActive(-1)} />
+				<img className="go_map" alt="go_map" src={"/icons/center.png"} onClick={() => setAProposIsActive(-1)} />
 			</button>
             
 		</div>

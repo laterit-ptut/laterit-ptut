@@ -53,7 +53,12 @@ export function Point({position, index, handleClick}) {
       opacity = 1 - ((max - state.camera.position.y) / (max - min));
       meshBasicMaterial.current.opacity = opacity;
       meshFocusBasicMaterial.current.opacity = opacity;
+    }else {
+      meshBasicMaterial.current.opacity = 1;
+      meshFocusBasicMaterial.current.opacity = 1;
     }
+
+    console.log(state.camera.position.y);
   });
 
   return <>

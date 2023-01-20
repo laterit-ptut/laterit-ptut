@@ -4,7 +4,7 @@ import PointPage from './Interface/componentsInterface/PointPage';
 import APropos from './Interface/componentsInterface/APropos';
 import { Map } from './Map/Map';
 import { Loader } from './utils/Loader';
-import { Sleep } from './utils/Sleep';
+import { Sleep } from './Interface/componentsInterface/Sleep';
 
 let timer;
 

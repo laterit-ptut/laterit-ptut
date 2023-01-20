@@ -72,7 +72,7 @@ export function Map({setActivePoint, activePoint}) {
   // }
 
   //debug activation
-  const debug = true;
+  const debug = false;
   const points = [[40, 6, -30], [20, 6, -10], [-1, 6, 10]]
 
   const camera = useRef();
@@ -124,7 +124,7 @@ export function Map({setActivePoint, activePoint}) {
       }
 
       if(!cameraTravel && pointFocus !== -1) {
-        // setActivePoint(pointFocus);
+        setActivePoint(pointFocus);
         console.log("c");
       }
 

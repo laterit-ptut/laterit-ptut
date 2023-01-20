@@ -5,13 +5,13 @@ function Sound({data, activePoint, playSound, setPlaySound}) {
 	const [translateSound, setTranslateSound] = useState(new Audio("/medias/sons/" + data.proverbes.fr.pathFile)) ; 
 	const [sound, setSound] = useState(new Audio("/medias/sons/" + data.proverbes.mg.pathFile)) ;  
 	
-	const [soundIcon, setSoundIcon] = useState("/medias/images/play.png") ; 
-	const [soundIconT, setSoundIconT] = useState("/medias/images/play.png") ; 
+	const [soundIcon, setSoundIcon] = useState("/icons/play.png") ; 
+	const [soundIconT, setSoundIconT] = useState("/icons/play.png") ; 
 
 	const [activeSound, setActiveSound] = useState(0) ; 
 
     useEffect(() => {  
-        if (playSound != 0){
+        if (playSound !== 0){
             activeSound.pause(); 
             activeSound.currentTime = 0;
             setPlaySound(0); 
@@ -22,8 +22,8 @@ function Sound({data, activePoint, playSound, setPlaySound}) {
 
 
     useEffect(() => {  
-        if (activeSound != 0){
-            if (playSound == 0){ 
+        if (activeSound !== 0){
+            if (playSound === 0){ 
                 activeSound.play() ; 
                 setPlaySound(1) ; 
             } 
@@ -37,8 +37,8 @@ function Sound({data, activePoint, playSound, setPlaySound}) {
 
 
     function play(theSound){
-        if (theSound != activeSound) { 
-            if (playSound != 0 ) { 
+        if (theSound !== activeSound) { 
+            if (playSound !== 0 ) { 
                 activeSound.pause() ; 
                 activeSound.currentTime = 0;
                 setPlaySound(0); 
@@ -46,7 +46,7 @@ function Sound({data, activePoint, playSound, setPlaySound}) {
             setActiveSound(theSound); 
         }
         else {
-            if (playSound == 0){ 
+            if (playSound === 0){ 
                 activeSound.play() ; 
                 setPlaySound(1) ; 
             } 
@@ -62,30 +62,30 @@ function Sound({data, activePoint, playSound, setPlaySound}) {
     function clickSoundT(){
         play(translateSound);
         
-        if (playSound == 0) { 
-                setSoundIconT("/medias/images/pause.png");   
+        if (playSound === 0) { 
+                setSoundIconT("/icons/pause.png");   
         }
-        else if (playSound == 1 && translateSound == activeSound) { 
-                setSoundIconT("/medias/images/play.png");  
+        else if (playSound === 1 && translateSound === activeSound) { 
+                setSoundIconT("/icons/play.png");  
         }
-        else if (playSound == 1 && sound == activeSound) { 
-                setSoundIcon("/medias/images/play.png");  
-                setSoundIconT("/medias/images/pause.png");   
+        else if (playSound === 1 && sound === activeSound) { 
+                setSoundIcon("/icons/play.png");  
+                setSoundIconT("/icons/pause.png");   
         }
     }
 
     function clickSound(){
         play(sound);
 
-        if (playSound == 0) { 
-                setSoundIcon("/medias/images/pause.png");   
+        if (playSound === 0) { 
+                setSoundIcon("/icons/pause.png");   
         }
-        else if (playSound == 1 && sound == activeSound) { 
-                setSoundIcon("/medias/images/play.png");  
+        else if (playSound === 1 && sound === activeSound) { 
+                setSoundIcon("/icons/play.png");  
         }
-        else if (playSound == 1 && translateSound == activeSound) { 
-                setSoundIcon("/medias/images/pause.png");  
-                setSoundIconT("/medias/images/play.png");   
+        else if (playSound === 1 && translateSound === activeSound) { 
+                setSoundIcon("/icons/pause.png");  
+                setSoundIconT("/icons/play.png");   
         }
     }
 
