@@ -14,6 +14,10 @@ export function Sleep({setSleep, setActivePoint}) {
   }
 
   return (
-    <div className={`Sleep ${opacity ? '' : 'wakeup'}`} style={{backgroundImage: `url('/medias/images/PontdeFiherenana.jpg')`}} onClick={handleClick} />
+    <div className={`Sleep ${opacity ? '' : 'wakeup'}`} style={{backgroundImage: `url('/medias/images/PontdeFiherenana.jpg')`}} onClick={handleClick}>
+      <div className="Sleep_button">
+        <img src="/icons/arrow.svg" />
+      </div>
+    </div>
   );
 }
