@@ -25,4 +25,6 @@ yarn-error.log*
 
 /public/medias
 
+/public/models/props
+
 .vscode/
