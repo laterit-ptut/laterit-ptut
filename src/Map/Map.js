@@ -127,7 +127,7 @@ export function Map() {
     });
 
     return <>
-      {/* <OrbitControls maxPolarAngle={1.45}/> */}
+      <OrbitControls maxPolarAngle={1.45}/>
       <PerspectiveCamera ref={camera} makeDefault fov={50} position={p0.position} rotation={p0.rotation} />
     </>
   }
@@ -148,6 +148,8 @@ export function Map() {
           <Camera />
 
           {/* <color attach="background" args={['##C0D1DB']} /> */}
+
+          <axesHelper args={[5]} position={[0, 10, 0]} />
 
           <ambientLight intensity={0.5} />
 
