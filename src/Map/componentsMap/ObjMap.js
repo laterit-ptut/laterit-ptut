@@ -28,6 +28,8 @@ export function ObjMap() {
   );
 
   useEffect(() => {
+    t.scene.castShadow = true;
+    t.scene.receiveShadow = true;
     t.scene.traverse((object) => {
       if (object instanceof Mesh) {
         object.castShadow = true;

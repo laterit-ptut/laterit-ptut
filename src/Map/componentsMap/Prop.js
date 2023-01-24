@@ -44,10 +44,6 @@ export function Prop({file, position, rotation, scale}) {
       }
     }
 
-    console.log(arrayObj);
-    console.log(position);
-    console.log(rotation);
-
     setObjs(arrayObj);
     
   }, []);

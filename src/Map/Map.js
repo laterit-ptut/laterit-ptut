@@ -62,7 +62,7 @@ export function Map() {
   const p0 = { position : [16, 176, 4], rotation : [-1.57, 0, 0.1] } // default position & rotation
 
   //debug activation
-  const debug = false;
+  const debug = true;
   const points = [[40, 6, -30], [20, 6, -10], [-1, 6, 10]]
 
   const camera = useRef();
@@ -148,9 +148,9 @@ export function Map() {
           <Camera />
 
           {/* <color attach="background" args={['##C0D1DB']} /> */}
-
-          <axesHelper args={[5]} position={[0, 10, 0]} />
-
+          {(debug) &&
+            <axesHelper args={[5]} position={[0, 10, 0]} />
+          }
           <ambientLight intensity={0.5} />
 
           {points.map((point, index) =>
@@ -182,9 +182,6 @@ export function Map() {
           <Ocean />
           <ObjMap />
           <Props file={"voiture/voiture.gltf"} position={[1, 1, 10]} scale={0.25} rotation={[0.15, -0.5, 0]} />
-          {(debug) &&
-            <primitive position={[0, 20, 0]} object={new AxesHelper(10)} />
-          }
           {/* <Ground /> */}
         </Suspense>
       </Canvas>

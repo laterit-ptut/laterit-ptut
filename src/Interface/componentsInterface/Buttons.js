@@ -1,33 +1,33 @@
 import React from 'react'
 import { StateMapManager } from '../../Map/componentsMap/StateMapManager';
 
-function Buttons({setActivePoint, index}) {
+function Buttons({ setActivePoint, index }) {
 
   function changePoint(nb) {
-	  	if(nb === 0) { 
-		  index = -1 ; 
-	  	}
-		else {
-			index = Math.abs(index+nb)%3; 
-		}
+    let nbPoints = StateMapManager.getNumberOfPoints();
+    if (nb === 0) {
+      index = -1;
+    }
+    else {
+      index = Math.abs(index + nb) % nbPoints;
+    }
     setActivePoint(index);
-	StateMapManager.changeActivePoint(index);
-	}
+    StateMapManager.changeActivePoint(index);
+  }
 
-	return(
-		<div className="buttons" >
-			<button className='btn'>
-				<img className="arrow_left" alt="arrow_left" src={"/icons/left.png"} onClick={() => changePoint(-1)}/>
-			</button>
-			<button className='btn'>
-				<img className="go_map" alt="go_map" src={"/icons/center.png"} onClick={() => changePoint(0)}/>
-			</button>
-			<button className='btn'>
-				<img className="arrow_right" alt="arrow_right" src={"/icons/right.png"} onClick={() => changePoint(1)}/>
-			</button>
-		</div>
-	)
+  return (
+    <div className="buttons" >
+      <button className='btn'>
+        <img className="arrow_left" alt="arrow_left" src={"/icons/left.png"} onClick={() => changePoint(-1)} />
+      </button>
+      <button className='btn'>
+        <img className="go_map" alt="go_map" src={"/icons/center.png"} onClick={() => changePoint(0)} />
+      </button>
+      <button className='btn'>
+        <img className="arrow_right" alt="arrow_right" src={"/icons/right.png"} onClick={() => changePoint(1)} />
+      </button>
+    </div>
+  )
 }
 
 export default Buttons
- 

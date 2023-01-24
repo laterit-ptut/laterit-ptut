@@ -4,6 +4,7 @@ import { Map } from './Map/Map';
 import { Loader } from './utils/Loader';
 import { Sleep } from './Interface/componentsInterface/Sleep';
 import { Points } from './Interface/componentsInterface/Points';
+import { StateMapManager } from './Map/componentsMap/StateMapManager';
 
 let timer;
 
@@ -21,11 +22,10 @@ const App = () => {
        }
     })
     .then(function(response){
-      console.log(response);
       return response.json();
     })
     .then(function(myJson) {
-      console.log(myJson);
+      StateMapManager.setNumberOfPoints(myJson.points.length);
       setData(myJson);
     });
   }

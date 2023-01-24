@@ -53,4 +53,12 @@ export class StateMapManager {
   static addCallbackBlockInterface(funct) {
     this.blockInterface.callbackFunctions.push(funct);
   }
+
+  //Number of points
+
+  static numberOfPoints = 0; 
+
+  static getNumberOfPoints() {return this.numberOfPoints}
+
+  static setNumberOfPoints(number) {this.numberOfPoints = number}
 }
