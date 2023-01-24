@@ -4,11 +4,9 @@ import { OrbitControls, PerspectiveCamera, Sky } from "@react-three/drei";
 import { Stats } from "@react-three/drei";
 import { AxesHelper } from "three";
 
-// import { Ground } from './componentsMap/Ground';
 import { Ocean } from './componentsMap/Water';
 import { ObjMap } from './componentsMap/ObjMap';
 import { Point } from './componentsMap/Point';
-import { Clouds } from './componentsMap/Clouds';
 import { MyCloud } from './componentsMap/MyCloud';
 import { Props } from './componentsMap/Props';
 
@@ -16,9 +14,10 @@ import { Bezier } from "../utils/Bezier";
 import { BezierProvider } from "../utils/BezierProvider";
 
 import { ResizeObserver } from '@juggle/resize-observer';
+import { StateMapManager } from "./componentsMap/StateMapManager";
 
 
-export function Map({setActivePoint, activePoint}) {
+export function Map() {
 
   //GET FRAMERATE
   let t = [];
@@ -47,6 +46,7 @@ export function Map({setActivePoint, activePoint}) {
 
   useEffect(() => {
     test = true;
+    StateMapManager.addCallbackActivePoint(focusPoint);
   }, [])
 
   const axes = ['x', 'y', 'z'];
@@ -59,17 +59,7 @@ export function Map({setActivePoint, activePoint}) {
   }
   BezierProvider.beziers["map"] = bez;
   
-  let cameraTravel = false;
-  let pointFocus = -1;
-  const p0 = {
-    position : [16, 176, 4],
-    rotation : [-1.57, 0, 0.1]
-  }
-
-  // const p0 = {
-  //   position : [-0.99, 6, 19.99],
-  //   rotation : [-0.42, 0, 0]
-  // }
+  const p0 = { position : [16, 176, 4], rotation : [-1.57, 0, 0.1] } // default position & rotation
 
   //debug activation
   const debug = false;
@@ -82,6 +72,7 @@ export function Map({setActivePoint, activePoint}) {
     console.log(camera.current.position);
     console.log(camera.current.rotation);
   }
+
   function moveToP0() {
     moveTo(p0.position, p0.rotation)
   }
@@ -96,13 +87,16 @@ export function Map({setActivePoint, activePoint}) {
       BezierProvider.beziers["map"][i+3].setPoints(camera.current.rotation[axes[i]], rotation[i]);
     }
 
-    pointFocus = 1;
-    cameraTravel = true;
   }
 
   function focusPoint(index) {
-    let position = [points[index][0], points[index][1], points[index][2] + 10]
-    moveTo(position, [-0.420, 0, 0]);
+    if(index === -1) { // return to p0 position
+      moveToP0();
+    } else {
+      let position = [points[index][0], points[index][1], points[index][2] + 10]
+      moveTo(position, [-0.420, 0, 0]);
+    }
+    StateMapManager.changeActivePoint(index);    
   }
 
   const Camera = () => {    
@@ -119,13 +113,15 @@ export function Map({setActivePoint, activePoint}) {
         value = BezierProvider.beziers["map"][i+3].get();
         if(value) {camera.current.rotation[axes[i]] = value}
       }
+
       if(value === false) {
-        cameraTravel = false;
+        StateMapManager.changeBlockInterface(false);
+      }else {
+        StateMapManager.changeBlockInterface(true);
       }
 
-      if(!cameraTravel && pointFocus !== -1) {
-        setActivePoint(pointFocus);
-        console.log("c");
+      if(camera.current.position.y > 100) {// fix interface flash
+        StateMapManager.changeBlockInterface(true);
       }
 
     });

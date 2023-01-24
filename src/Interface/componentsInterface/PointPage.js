@@ -45,19 +45,19 @@ function PointPage({data, setActivePoint, activePoint}) {
           data = {data}
           activePoint = {activePoint}
           playSound = {playSound}
-          setPlaySound={(file) => setPlaySound(file)} >
-        </Sound>
+          setPlaySound={(file) => setPlaySound(file)}
+        />
    
         <LinksVideo
           data = {data} 
           setActiveVideo = {(file) => setActiveVideo(file)} 
-          index = {activeVideo} >
-        </LinksVideo> 
+          index = {activeVideo}
+        />
 
         <Buttons
           setActivePoint={(file) => setActivePoint(file)}   
-          index={activePoint}  > 
-        </Buttons>
+          index={activePoint}
+        /> 
       </div>
 
 		</div>

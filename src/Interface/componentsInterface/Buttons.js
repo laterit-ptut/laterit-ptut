@@ -1,15 +1,17 @@
 import React from 'react'
+import { StateMapManager } from '../../Map/componentsMap/StateMapManager';
 
 function Buttons({setActivePoint, index}) {
 
   function changePoint(nb) {
-	  if(nb === 0) { 
+	  	if(nb === 0) { 
 		  index = -1 ; 
-	  }
+	  	}
 		else {
-			index = Math.abs(index+nb)%10 ; 
+			index = Math.abs(index+nb)%3; 
 		}
-    setActivePoint(index); 
+    setActivePoint(index);
+	StateMapManager.changeActivePoint(index);
 	}
 
 	return(

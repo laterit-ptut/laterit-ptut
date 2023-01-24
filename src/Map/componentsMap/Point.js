@@ -57,8 +57,7 @@ export function Point({position, index, handleClick}) {
       meshBasicMaterial.current.opacity = 1;
       meshFocusBasicMaterial.current.opacity = 1;
     }
-
-    console.log(state.camera.position.y);
+    
   });
 
   return <>
@@ -70,6 +69,5 @@ export function Point({position, index, handleClick}) {
         <meshBasicMaterial ref={meshFocusBasicMaterial}  attach="material" map={focus} transparent />
       </mesh>
     </mesh>
-    
   </>
 }
