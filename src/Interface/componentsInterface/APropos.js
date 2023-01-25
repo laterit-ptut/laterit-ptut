@@ -39,10 +39,10 @@ export function APropos() {
                 <p><span>Post production</span> : Agnès Contensou</p>
                 <p><span>Production</span> : laterit en partenariat avec l'IMAC - Université Gustave Eiffel</p>
                 <p><span>Consultant Scenographie</span> : Alexandre Garland</p>
-                <p><span>...</span> : Lauriane Gélébart</p>
-                <p><span>...</span> : Loïc Quinquenel</p>
-                <p><span>...</span> : Fady Bekkar</p>
-                <p><span>Tuteur</span> : Sylvain Cherier</p>
+                <p><span>Graphiste et développeuse carte</span> : Lauriane Gélébart</p>
+                <p><span>Développeur carte</span> : Loïc Quinquenel</p>
+                <p><span>Modélisateur carte</span> : Fady Bekkar</p>
+                <p><span>Tuteur académique</span> : Sylvain Cherier</p>
               </div>
             </div>
             <button className='btn'>
