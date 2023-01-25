@@ -158,7 +158,7 @@ video {
 .aPropos{
   width: 75%;
   height: 70%;
-  background : rgba(27, 27, 27, 0.8) ;
+  background : rgba(27, 27, 27, 0.8);
   padding: 5vh;
   margin: auto;
 }
@@ -222,4 +222,35 @@ figcaption{
 .aPropos button{
   width: 100%;
   margin: 1vh auto;
+  cursor: pointer;
+}
+
+/* ---------------------------- Footer ---------------------------- */
+
+.Footer {
+  z-index: 999;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background : rgba(27, 27, 27, 0.2);
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.Footer .aProposLink {
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Footer  .langues img {
+  height: 25%;
+  cursor: pointer;
 }

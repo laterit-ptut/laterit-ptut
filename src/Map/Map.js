@@ -64,6 +64,7 @@ export function Map() {
   //debug activation
   const debug = true;
   const points = [[40, 6, -30], [20, 6, -10], [-1, 6, 10]]
+  // const points = [[-15, 6, -80], [53, 6, 78], [9, 6, 56], [109, 6, 25]]
 
   const camera = useRef();
 
@@ -127,7 +128,7 @@ export function Map() {
     });
 
     return <>
-      <OrbitControls maxPolarAngle={1.45}/>
+      {/* <OrbitControls maxPolarAngle={1.45}/> */}
       <PerspectiveCamera ref={camera} makeDefault fov={50} position={p0.position} rotation={p0.rotation} />
     </>
   }
@@ -181,7 +182,7 @@ export function Map() {
           <MyCloud p0={p0} />
           <Ocean />
           <ObjMap />
-          <Props file={"voiture/voiture.gltf"} position={[1, 1, 10]} scale={0.25} rotation={[0.15, -0.5, 0]} />
+          <Props />
           {/* <Ground /> */}
         </Suspense>
       </Canvas>

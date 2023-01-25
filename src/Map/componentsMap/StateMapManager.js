@@ -31,7 +31,7 @@ export class StateMapManager {
 
   static getPrevPoint() {return this.prevPoint}
 
-  //cameraTravel
+  //blockInterface
   static blockInterface = {
     value : false,
     callbackFunctions: []
@@ -61,4 +61,28 @@ export class StateMapManager {
   static getNumberOfPoints() {return this.numberOfPoints}
 
   static setNumberOfPoints(number) {this.numberOfPoints = number}
+
+  //A propos
+
+  static aPropos = {
+    value : false,
+    callbackFunctions: []
+  };
+
+  static changeAPropos(bool) {
+    if(bool !== this.aPropos.value) {
+      this.aPropos.value = bool;
+      this.aPropos.callbackFunctions.forEach(funct => {
+        funct(bool);
+      });
+    }
+  }
+
+  static getAPropos() {
+    return this.aPropos.value;
+  }
+
+  static addCallbackAPropos(funct) {
+    this.aPropos.callbackFunctions.push(funct);
+  }
 }
