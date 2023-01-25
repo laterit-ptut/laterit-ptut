@@ -1,6 +1,8 @@
 {
     "points" : [
       {
+        "pathFilePicto" : "pirogue.png",
+        
         "name" : {
           "mg" : "Anosizato & Ikopa",
           "fr" : "Ile des cents sur la brise",
@@ -50,6 +52,8 @@
 
       
       {
+        "pathFilePicto" : "pirogue.png",
+
         "name" : {
           "mg" : "Ambila Lemaitso",
           "en" : "The green place full of fish traps",
@@ -98,6 +102,9 @@
 
 
       {
+
+        "pathFilePicto" : "charrette.png",
+
         "name" : {
           "mg" : "Fiherenana",
           "en" : "Where you can recover",
@@ -146,6 +153,8 @@
 
 
       {
+        "pathFilePicto" : "charrette.png",
+
         "name" : {
           "mg" : "Ambohimavelona",
           "en" : "The mount that keeps you alive",
@@ -162,16 +171,16 @@
 
         "videos" : [
           {
-            "pathFile" : "FIHERENANA_01_AmontPontAval.mp4",
-            "pathThumbnail" : "FIHERENANA_01_AmontPontAvalOK.jpg"
+            "pathFile" : "AMBOHIMAVELONA_01_RecolteRizB108.mp4",
+            "pathThumbnail" : "AMBOHIMAVELONA-_01_RecolteRizB108.jpeg"
           },
           {
-            "pathFile" : "FIHERENANA_02_FillePuiseLeau.mp4",
-            "pathThumbnail" : "FIHERENANA_02bis_FilleSortdDLeauOK.jpg"
+            "pathFile" : "FAMBOHIMAVELONA_02_HommeBotteDeRizB108.mp4",
+            "pathThumbnail" : "AMBOHIMAVELONA-_02-_HommeBotteDe-RizB108.jpeg"
           },
           {
-            "pathFile" : "FIHERENANA_03_PlanLarge.mp4",
-            "pathThumbnail" : "FIHERENANA_03_PlanLargeOK.jpg"
+            "pathFile" : "AMBOHIMAVELONA_03_CharretttesB108.mp4",
+            "pathThumbnail" : "AMBOHIMAVELONA-_03-_CharrettesB108.jpeg"
           }
         ], 
 
@@ -194,6 +203,8 @@
 
     
       {
+        "pathFilePicto" : "charrette.png",
+
         "name" : {
           "mg" : "Menarandra",
           "en" : "Red braids",
@@ -242,6 +253,8 @@
 
 
       {
+        "pathFilePicto" : "pirogue.png",
+
         "name" : {
           "mg" : "Maroantsetra",
           "en" : "Many sets or positions",
@@ -290,6 +303,8 @@
 
     
       {
+        "pathFilePicto" : "cuisine.png",
+
         "name" : {
           "mg" : "Fasina",
           "en" : "Sandy",
@@ -338,6 +353,8 @@
 
 
       {
+        "pathFilePicto" : "pirogue.png",
+
         "name" : {
           "mg" : "Rasoamasay",
           "en" : "The second wife",
@@ -382,10 +399,61 @@
           }
         }
       },
-  
-    
+        
+          
+      {
+        "pathFilePicto" : "charrette.png",
+
+        "name" : {
+          "mg" : "Mahaboboka",
+          "en" : "Always wet or full of mod or drunk ",
+          "fr" : "Là ça moisit, ça détrempe, ça imbibe et donc ça saoule"
+        },
+        "text" : {
+          "mg" : "desMG",
+          "fr" : "L'idée de mouillé, de moisissure,  tellement imbibé que ça vous transforme ",
+          "en" : "desEN"
+        },
+        
+        "latitude" : -22.896856, 
+        "longitude" : 44.336998,
+
+        "videos" : [
+          {
+            "pathFile" : "MAHABOBOKA_01_HommeAGueB108.mp4",
+            "pathThumbnail" : "MAHABOBOKA_01_HommeAGueB108-.jpeg"
+          },
+          {
+            "pathFile" : "MAHABOBOKA_02_CharretteAGueB108.mp4",
+            "pathThumbnail" : "MAHABOBOKA_02_CharretteAGueB108-.jpeg"
+          },
+          {
+            "pathFile" : "MAHABOBOKA_03_FemmesAGueB108.mp4",
+            "pathThumbnail" : "MAHABOBOKA_03_FemmesAGueB108.jpeg"
+          }
+        ], 
+
+        "proverbes" : {
+          "mg" : {
+            "text" : "Tsy misy hazo natao tsy ho boboka, na mahitsy izy na bila.  [Rinara 1974 #4710]", 
+            "pathFile" : "test.wav"
+          },
+          "en" : {
+            "text" : "There is no tree/wood that does'nt rot  be they straight or twisted", 
+            "pathFile" : "test.wav"
+          },
+          "fr" : {
+            "text" : "Il n'existe pas d'arbre qui ne pourrisse pas qu'il soit droit ou tordu.",
+            "pathFile" : "test.wav"
+          }
+        }
+      },
+
+
 
       {
+        "pathFilePicto" : "esprit.png",
+
         "name" : {
           "mg" : "Ankazomalaza",
           "en" : "Holy Wood",
@@ -434,6 +502,8 @@
 
 
       {
+        "pathFilePicto" : "cuisine.png",
+
         "name" : {
           "mg" : "Alaotra",
           "en" : "Zero lake",
@@ -450,16 +520,16 @@
 
         "videos" : [
           {
-            "pathFile" : "ANKAZOMALAZA_01_PriereEauB5.mp4",
-            "pathThumbnail" : "ANKAZOMALAZA_01_PriereEauB5.jpg"
+            "pathFile" : "LAC_ALAOTRA_01_FemmesSeauTete.mp4",
+            "pathThumbnail" : "LAC_ALAOTRA_01_FemmesSeauTete.jpg"
           },
           {
-            "pathFile" : "ANKAZOMALAZA_02_TrombaB5.mp4",
-            "pathThumbnail" : "ANKAZOMALAZA_02_ TrombaB5.jpg"
+            "pathFile" : "LAC_ALAOTRA_02_BainLessive.mp4",
+            "pathThumbnail" : "LAC_ALAOTRA_02_BainLessive.jpg"
           },
           {
-            "pathFile" : "ANKAZOMALAZA_03_ConsultationB5.mp4",
-            "pathThumbnail" : "ANKAZOMALAZA_03_ConsultationB5.jpg"
+            "pathFile" : "LAC_ALAOTRA_03_KitayPirogue.mp4",
+            "pathThumbnail" : "LAC_ALAOTRA_03_ KitayPirogue.jpg"
           }
         ], 
 

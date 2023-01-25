@@ -4,8 +4,8 @@ import { TextureLoader } from "three";
 import { Bezier } from '../../utils/Bezier';
 import { BezierProvider } from '../../utils/BezierProvider';
 
-export function Point({position, index, handleClick}) {
-  const texture = useLoader(TextureLoader, '/icons/point.png');
+export function Point({data, position, index, handleClick}) {
+  const texture = useLoader(TextureLoader, '/icons/'+ data.pathFilePicto);
   const focus = useLoader(TextureLoader, '/icons/pointfocus.png');
   const mesh = useRef();
   const meshBasicMaterial = useRef();

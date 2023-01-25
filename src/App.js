@@ -76,7 +76,7 @@ const App = () => {
               }
             </div>
           } */}
-          <Map />
+          <Map data={data} />
         </Suspense>
       }
     </div>

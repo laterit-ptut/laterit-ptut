@@ -17,7 +17,7 @@ import { ResizeObserver } from '@juggle/resize-observer';
 import { StateMapManager } from "./componentsMap/StateMapManager";
 
 
-export function Map() {
+export function Map({data}) {
 
   //GET FRAMERATE
   let t = [];
@@ -63,7 +63,7 @@ export function Map() {
 
   //debug activation
   const debug = false;
-  const points = [[40, 6, -30], [20, 6, -10], [-1, 6, 10]]
+  const points = [[25, 6, 65], [42, 6, -35], [-1, 6, 10]]
 
   const camera = useRef();
 
@@ -154,7 +154,7 @@ export function Map() {
           <ambientLight intensity={0.5} />
 
           {points.map((point, index) =>
-            <Point key={index} position={point} index={index} handleClick={(index) => focusPoint(index)} />
+            <Point key={index} data={data.points[index]} position={point} index={index} handleClick={(index) => focusPoint(index)} />
           )}
 
           <spotLight
