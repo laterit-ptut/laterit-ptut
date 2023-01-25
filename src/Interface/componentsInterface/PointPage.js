@@ -33,10 +33,9 @@ function PointPage({data, setActivePoint, activePoint}) {
 
 	return(
 		<div className="pointPage">
-
       <h2>{data.name.mg}</h2>
       <h3>{data.name.fr + " - " + data.name.en}</h3>
-      <video key={sourceVideo} muted={muted} autoPlay onEnded={() => changeVideoAtEnd()}>
+      <video key={sourceVideo} muted={muted} autoPlay onEnded={() => changeVideoAtEnd()} poster="/icons/loadvideo.png">
           <source src={sourceVideo} type="video/mp4"/>
       </video> 
       <div className="contenu">
@@ -52,14 +51,12 @@ function PointPage({data, setActivePoint, activePoint}) {
           data = {data} 
           setActiveVideo = {(file) => setActiveVideo(file)} 
           index = {activeVideo}
-        />
-
-        <Buttons
-          setActivePoint={(file) => setActivePoint(file)}   
-          index={activePoint}
-        /> 
+        />        
       </div>
-
+      <Buttons
+        setActivePoint={(file) => setActivePoint(file)}   
+        index={activePoint}
+      /> 
 		</div>
 	)
 }

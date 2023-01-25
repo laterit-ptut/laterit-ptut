@@ -42,7 +42,7 @@ export function APropos() {
                 <p><span>Graphiste et développeuse carte</span> : Lauriane Gélébart</p>
                 <p><span>Développeur carte</span> : Loïc Quinquenel</p>
                 <p><span>Modélisateur carte</span> : Fady Bekkar</p>
-                <p><span>Tuteur académique</span> : Sylvain Cherier</p>
+                <p><span>Tuteur académique</span> : Sylvain Cherrier</p>
               </div>
             </div>
             <button className='btn'>
