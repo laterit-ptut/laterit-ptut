@@ -9,7 +9,9 @@ function Buttons({ setActivePoint, index }) {
       index = -1;
     }
     else {
-      index = Math.abs(index + nb) % nbPoints;
+      let new_index = index+nb; 
+			if (new_index < 0) index = 9; 
+			else index = Math.abs(new_index)%9; 
     }
     setActivePoint(index);
     StateMapManager.changeActivePoint(index);

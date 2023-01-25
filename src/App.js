@@ -17,7 +17,7 @@ const App = () => {
   const [sleep, setSleep] = useState(true);
 
   const getData = () => {
-    fetch('./test.json',{
+    fetch('./data.json',{
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -132,7 +132,7 @@ const App = () => {
             </div>
           } */}
           <Footer />
-          <Map />
+          <Map data={data} />
         </Suspense>
       }
     </div>

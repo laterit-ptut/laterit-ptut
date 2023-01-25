@@ -15,6 +15,10 @@ export function Sleep({setSleep, setActivePoint}) {
 
   return (
     <div className={`Sleep ${opacity ? '' : 'wakeup'}`} style={{backgroundImage: `url('/medias/images/PontdeFiherenana.jpg')`}} onClick={handleClick}>
+      <div className="titre_accueil">
+        <h1>Madagascar</h1>
+        <h2>Voan-Dalana</h2>
+      </div>
       <img className="line line1" src="/icons/line.svg" alt="" />
       <img className="line line2" src="/icons/line.svg" alt="" />
       <div className="Sleep_button">

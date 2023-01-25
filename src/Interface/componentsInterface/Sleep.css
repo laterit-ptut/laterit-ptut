@@ -90,3 +90,17 @@
 .Sleep_button:active img {
     transform: rotate(45deg) translate(10px, 0);
 }
+
+.titre_accueil{
+    position: relative;
+    top : -25vh ; 
+    left: -5vh;
+}
+
+.titre_accueil h1{
+    font-size: 5vh;
+}
+
+.titre_accueil h2{
+    font-size: 6vh;
+}
