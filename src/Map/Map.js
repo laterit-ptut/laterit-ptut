@@ -63,7 +63,7 @@ export function Map({data}) {
 
   //debug activation
   const debug = false;
-  const points = [[25, 6, 65], [42, 6, -35], [-1, 6, 10]]
+  const points = [[13, 6, 42], [51, 6, -18], [27, 6, 78]]
 
   const camera = useRef();
 
@@ -154,7 +154,7 @@ export function Map({data}) {
           <ambientLight intensity={0.5} />
 
           {points.map((point, index) =>
-            <Point key={index} data={data.points[index]} position={point} index={index} handleClick={(index) => focusPoint(index)} />
+            <Point key={index} data={data.points[index]} index={index} handleClick={(index) => focusPoint(index)} />
           )}
 
           <spotLight

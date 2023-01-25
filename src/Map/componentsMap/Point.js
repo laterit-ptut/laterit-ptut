@@ -4,7 +4,7 @@ import { TextureLoader } from "three";
 import { Bezier } from '../../utils/Bezier';
 import { BezierProvider } from '../../utils/BezierProvider';
 
-export function Point({data, position, index, handleClick}) {
+export function Point({data, index, handleClick}) {
   const texture = useLoader(TextureLoader, '/icons/'+ data.pathFilePicto);
   const focus = useLoader(TextureLoader, '/icons/pointfocus.png');
   const mesh = useRef();
@@ -12,6 +12,25 @@ export function Point({data, position, index, handleClick}) {
   const meshFocus = useRef();
   const meshFocusBasicMaterial = useRef();
   let mode = "down";
+
+  // calcul position latitude longitude 
+  let y = data.latitude;
+  let x = data.longitude ; 
+
+  y+=17.32 ; 
+  x-=45.37 ; 
+
+  y*= (44.0/4.36) ; 
+  x*= (54.0/4.22) ; 
+   
+  let cosT = Math.cos(21*Math.PI/180) ; 
+  let sinT = Math.sin(21*Math.PI/180) ; 
+  
+  let rX = x*cosT-y*sinT ; 
+  let rY = -( y*cosT+x*sinT ) ; 
+
+  let position = [rX, 6, rY] ; 
+  // ---------------------- //
 
   let bez = [];
   bez.push(new Bezier());
