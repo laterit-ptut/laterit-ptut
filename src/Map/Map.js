@@ -63,7 +63,7 @@ export function Map({data}) {
   const p0 = { position : [16, 176, 4], rotation : [-1.57, 0, 0.1] } // default position & rotation
 
   //debug activation
-  const debug = true;
+  const debug = false;
  
   const camera = useRef();
 
@@ -94,6 +94,7 @@ export function Map({data}) {
       moveToP0();
     } else {
       let position = LongLatToXY(data.points[index]) ; 
+      position[2] = position[2] + 13;
       moveTo(position, [-0.420, 0, 0]);
     }
     StateMapManager.changeActivePoint(index);    
