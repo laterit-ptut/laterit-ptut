@@ -17,14 +17,14 @@ export function Props() {
     <Prop file={"bridge/bridge.gltf"} position={[5, 0.8, 65]} scale={0.4} rotation={[0, -0.95, 0]} />
 
     {/* Alaotra */}
-    <Prop file={"pirogue/3/pirogue3.gltf"} position={[-8, 1, 30]} scale={0.3} rotation={[0.15, -0.5, 0]} />
+    {/* <Prop file={"pirogue/3/pirogue3.gltf"} position={[-8, 1, 30]} scale={0.3} rotation={[0.15, -0.5, 0]} /> */}
     <Prop file={"goose/1/goose.gltf"} position={[30, 3, -10]} scale={0.08} rotation={[0.15, -0.5, 0]} />
     <Prop file={"goose/2/goose2.gltf"} position={[30, 3, -7]} scale={0.08} rotation={[0.15, -0.4, 0]} />
     <Prop file={"goose/3/goose3.gltf"} position={[31, 3, -8]} scale={0.08} rotation={[0.15, -0.1, 0]} />
     <Prop file={"goose/4/goose4.gltf"} position={[28, 3, -9]} scale={0.08} rotation={[0.15, -0.1, 0]} />
 
     {/* Ikopa / Anosizato  */}
-    <Prop file={"pirogue/3/pirogue3.gltf"} position={[[57, 0, 52], [54, 0, 12]]} scale={0.4} rotation={[[0, 1, 0],[0, 0.5, 0]]} />
+    {/* <Prop file={"pirogue/3/pirogue3.gltf"} position={[[57, 0, 52], [54, 0, 12]]} scale={0.4} rotation={[[0, 1, 0],[0, 0.5, 0]]} /> */}
 
     {/* Fasina  */}
     {/* <Prop file={"pot/pot.gltf"} position={[40, 2, -30]} scale={0.25} rotation={[0.15, -0.5, 0]} /> */}
