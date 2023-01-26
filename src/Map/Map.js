@@ -127,7 +127,7 @@ export function Map({data}) {
     });
 
     return <>
-      {/* <OrbitControls maxPolarAngle={1.45}/> */}
+       <OrbitControls maxPolarAngle={1.45}/>
       <PerspectiveCamera ref={camera} makeDefault fov={50} position={p0.position} rotation={p0.rotation} />
     </>
   }
