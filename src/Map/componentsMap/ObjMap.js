@@ -9,7 +9,7 @@ import { GLTFLoader } from "three-stdlib";
 
 // import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
 
-const file = "ps_madagascar_22.gltf";
+const file = "madagascar_test_height_map.gltf";
 
 useGLTF.preload('/models/map/' + file)
 
