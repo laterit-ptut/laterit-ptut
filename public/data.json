@@ -44,7 +44,7 @@
       }
     },
     {
-      "pathFilePicto": "pirogue.png",
+      "pathFilePicto": "pieds.png",
       "name": {
         "mg": "Ambila Lemaitso",
         "en": "The green place full of fish traps",
@@ -302,7 +302,7 @@
       }
     },
     {
-      "pathFilePicto": "pirogue.png",
+      "pathFilePicto": "cuisine.png",
       "name": {
         "mg": "Rasoamasay",
         "en": "The second wife",
@@ -345,7 +345,7 @@
       }
     },
     {
-      "pathFilePicto": "charrette.png",
+      "pathFilePicto": "pieds.png",
       "name": {
         "mg": "Mahaboboka",
         "en": "Always wet or full of mod or drunk ",
@@ -433,42 +433,125 @@
     {
       "pathFilePicto": "cuisine.png",
       "name": {
-        "mg": "Alaotra",
-        "en": "Zero lake",
-        "fr": "Le lac zero"
+        "mg": "Antananarivo",
+        "en": "The thousands' city",
+        "fr": "La cité des milles"
       },
       "text": {
-        "mg": "desMG",
-        "fr": "Le lac ALoatra , le grenier à riz de Madagascar",
-        "en": "desEN"
+        "fr": "Arrachage des jeunes semis de riz à transplanter dans les vastes rizieres ",
+        "en": "Removal of young rice seedlings to be transplanted in large paddy fields"
       },
-      "latitude": -17.348258,
-      "longitude": 48.606283,
+      "latitude": -18.880321, 
+      "longitude": 47.483089,
       "videos": [
         {
-          "pathFile": "LAC_ALAOTRA_01_FemmesSeauTete.mp4",
-          "pathThumbnail": "LAC_ALAOTRA_01_FemmesSeauTete.jpg"
+          "pathFile": "SUR_LA_DIGUE_A_TANA_01_TravellingB120.mp4",
+          "pathThumbnail": "SUR_LA_DIGUE_A_TANA_01_TravellingB120.jpg"
         },
         {
-          "pathFile": "LAC_ALAOTRA_02_BainLessive.mp4",
-          "pathThumbnail": "LAC_ALAOTRA_02_BainLessive.jpg"
+          "pathFile": "SUR_LA_DIGUE_A_TANA_02_FemmeBouturesB120B120.mp4",
+          "pathThumbnail": "SUR_LA_DIGUE_A_TANA_02_FemmeBouturesB120.jpg"
         },
         {
-          "pathFile": "LAC_ALAOTRA_03_KitayPirogue.mp4",
-          "pathThumbnail": "LAC_ALAOTRA_03_ KitayPirogue.jpg"
+          "pathFile": "SUR_LA DIGUE_A_TANA_03_RepiquesesEnLigneB120.mp4",
+          "pathThumbnail": "SUR_LA_DIGUE_A_TANA_03_RepiquesesEnLigneB120.jpg"
         }
       ],
       "proverbes": {
         "mg": {
-          "text": "Ny harena dia ohatra ny rano an-tami-bato: raha tazanina toa be, raha andraofana tsy ahazoana ohatrinona. [Rajemisa 1985]",
+          "text": "Fitia, ketsa, ka izay amindrana azy, aniriany.  [Monde malgache.org 2.415 #5089]",
           "pathFile": "test.wav"
         },
         "en": {
-          "text": "Fortune is like the water that oozes from the rocks: from a distance it seems to be abundant and when you approach it, you can hardly draw from it to drink.",
+          "text": "Love is like the small rice seedlingnevery were you transplant it grows"          ,
           "pathFile": "test.wav"
         },
         "fr": {
-          "text": "La fortune est comme l' eau qui suinte des rochers : de loin elle semble  abondante et quand on approche, c' est à peine si on peut en puiser pour boire.",
+          "text": "L'amour c'est comme des plants de riz qui poussent là où on les transplante.  [2.415 #5089] (l'amour c'est changeant",
+          "pathFile": "test.wav"
+        }
+      }
+    },
+    {
+      "pathFilePicto": "cuisine.png",
+      "name": {
+        "mg": "Fianarantsoa",
+        "en": "Good-learning (place)",
+        "fr": "Là où on apprend le bien"
+      },
+      "text": {
+        "en": "Transplanting young rice seedlings every 20 cm",
+        "fr": "Repiquage des jeunes pousses de  riz à repiquer tous les 20 cm"
+      },
+      "latitude": -21.491283, 
+      "longitude": 47.057699,
+      "videos": [
+        {
+          "pathFile": "FIANARANTSOA_01_FilleRoseB116.mp4",
+          "pathThumbnail": "FIANAR_01_RefletFilleRoseB116.jpg"
+        },
+        {
+          "pathFile": "FIANARANTSOA_02_HommeMasseBoueB116.mp4",
+          "pathThumbnail": "FIANAR_02_Homme2B116.jpg"
+        },
+        {
+          "pathFile": "FIANARANTSOA_03_BorneKmB116.mp4",
+          "pathThumbnail": "FIANAR_03_BorneKmB116.jpg"
+        }
+      ],
+      "proverbes": {
+        "mg": {
+          "text": "Mitaiza kely manetsa ka be no herikerehina [Monde malgache.org",
+          "pathFile": "test.wav"
+        },
+        "en": {
+          "text": "Bullied like a woman feeding her child while transplanting rice seedling ",
+          "pathFile": "test.wav"
+        },
+        "fr": {
+          "text": "débordée comme une femme qui a un enfant à nourrir pendant le repiquage (être au four et au moulin)",
+          "pathFile": "test.wav"
+        }
+      }
+    },
+    {
+      "pathFilePicto": "pieds.png",
+      "name": {
+        "mg": "Marotaolana",
+        "en": "Lots of bones",
+        "fr": "Gisement d'ossements"
+      },
+      "text": {
+        "fr": "La foret entre les lacs Marotaolana , Rasoabe et Rasoamasay le long de l'Ocean Indien",
+        "en": "The forest and the mangrove in between the pangalanes and the indian ocean "
+      },
+      "latitude": -18.696592, 
+      "longitude": 49.200139,
+      "videos": [
+        {
+          "pathFile": "MAROTOLANA_01_LacMartolonaB14.mp4",
+          "pathThumbnail": "MAROTOLANA_01_ LacMartolonaB14.jpg"
+        },
+        {
+          "pathFile": "MAROTOLONA_02_MarcheMangroveB16.mp4",
+          "pathThumbnail": "MAROTOLANA_02_MarcheMangrove.jpg"
+        },
+        {
+          "pathFile": "MAROTOLONA_03_ForetVersLacB16.mp4",
+          "pathThumbnail": "MAROTOLANA_03_ForetVersLac.jpg"
+        }
+      ],
+      "proverbes": {
+        "mg": {
+          "text": "Amoron' ala tsy manan-trano be. [2.165 #703, 2.415, 1.1]",
+          "pathFile": "test.wav"
+        },
+        "en": {
+          "text": "To live near the forest only in a cabin . (shoemaker with a bad boot)",
+          "pathFile": "test.wav"
+        },
+        "fr": {
+          "text": "VIvre dans une pauvre cabane au bord de la forêt (cordonnier mal chaussé)",
           "pathFile": "test.wav"
         }
       }

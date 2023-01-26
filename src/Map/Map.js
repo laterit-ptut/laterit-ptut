@@ -15,6 +15,7 @@ import { BezierProvider } from "../utils/BezierProvider";
 
 import { ResizeObserver } from '@juggle/resize-observer';
 import { StateMapManager } from "./componentsMap/StateMapManager";
+import { LongLatToXY } from "../utils/LongLatToXY";
 
 
 export function Map({data}) {
@@ -63,9 +64,7 @@ export function Map({data}) {
 
   //debug activation
   const debug = true;
-  const points = [[40, 6, -30], [20, 6, -10], [-1, 6, 10]]
-  // const points = [[-15, 6, -80], [53, 6, 78], [9, 6, 56], [109, 6, 25]]
-
+ 
   const camera = useRef();
 
   //debug functions
@@ -94,7 +93,7 @@ export function Map({data}) {
     if(index === -1) { // return to p0 position
       moveToP0();
     } else {
-      let position = [points[index][0], points[index][1], points[index][2] + 10]
+      let position = LongLatToXY(data.points[index]) ; 
       moveTo(position, [-0.420, 0, 0]);
     }
     StateMapManager.changeActivePoint(index);    
@@ -154,8 +153,8 @@ export function Map({data}) {
           }
           <ambientLight intensity={0.5} />
 
-          {points.map((point, index) =>
-            <Point key={index} data={data.points[index]} position={point} index={index} handleClick={(index) => focusPoint(index)} />
+          {(data.points).map((point, index) =>
+            <Point key={index} data={data.points[index]} index={index} handleClick={(index) => focusPoint(index)} />
           )}
 
           <spotLight

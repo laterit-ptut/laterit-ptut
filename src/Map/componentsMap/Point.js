@@ -3,8 +3,9 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { Bezier } from '../../utils/Bezier';
 import { BezierProvider } from '../../utils/BezierProvider';
+import { LongLatToXY } from '../../utils/LongLatToXY';
 
-export function Point({data, position, index, handleClick}) {
+export function Point({data,index, handleClick}) {
   const texture = useLoader(TextureLoader, '/icons/'+ data.pathFilePicto);
   const focus = useLoader(TextureLoader, '/icons/pointfocus.png');
   const mesh = useRef();
@@ -61,7 +62,7 @@ export function Point({data, position, index, handleClick}) {
   });
 
   return <>
-    <mesh ref={mesh} scale={1.3} position={position} onClick={(e) => handleClick(index)}>
+    <mesh ref={mesh} scale={1.3} position={LongLatToXY(data)} onClick={(e) => handleClick(index)}>
       <planeBufferGeometry attach="geometry" args={[4, 4]} />
       <meshBasicMaterial ref={meshBasicMaterial}  attach="material" map={texture} transparent />
       <mesh ref={meshFocus} scale={1}>
