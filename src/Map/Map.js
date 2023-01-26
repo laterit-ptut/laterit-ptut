@@ -158,23 +158,26 @@ export function Map({data}) {
           )}
 
           <spotLight
-            color={[1, 0.25, 0.7]}
-            intensity={1.5}
-            angle={10}
+            color={[1, 1, 1]}
+            intensity={0.4}
+            angle={15}
             penumbra={0.5}
-            position={[5, 5, 0]}
+            position={[5, 30, 0]}
             castShadow
             shadow-bias={-0.0001}
+            
           />
+
           <spotLight
-            color={[0.14, 0.5, 1]}
-            intensity={2}
-            angle={10}
+            color={[1, 1, 1]}
+            intensity={0.4}
+            angle={15}
             penumbra={0.5}
-            position={[-5, 5, 0]}
+            position={[-5, 30, 0]}
             castShadow
             shadow-bias={-0.0001}
           />
+
           {/* <fog attach="fog" args={['#C0D1DB', 200, 250]} /> */}
           <Sky azimuth={0.1} turbidity={10} rayleigh={0.5} inclination={0.6} distance={1000} />
           {/* <Clouds /> */}

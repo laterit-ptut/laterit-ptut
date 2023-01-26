@@ -76,7 +76,6 @@ export class StateMapManager {
         funct(bool);
       });
     }
-    console.log(bool);
     if(bool) {
       this.changeActivePoint(-1);
     }

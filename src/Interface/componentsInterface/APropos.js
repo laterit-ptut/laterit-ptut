@@ -37,7 +37,7 @@ export function APropos() {
                 <p><span>Chef Operateur image</span> : Cesar Paes</p>
                 <p><span>Ingénieur du son</span> : Raoul Fruhauf </p>
                 <p><span>Post production</span> : Agnès Contensou</p>
-                <p><span>Production</span> : laterit en partenariat avec l'IMAC - Université Gustave Eiffel</p>
+                <p><span>Production</span> : Laterit en partenariat avec l'IMAC - Université Gustave Eiffel</p>
                 <p><span>Consultant Scenographie</span> : Alexandre Garland</p>
                 <p><span>Graphiste et développeuse carte</span> : Lauriane Gélébart</p>
                 <p><span>Développeur carte</span> : Loïc Quinquenel</p>
