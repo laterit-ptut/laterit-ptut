@@ -42,7 +42,7 @@ export function Point({data,index, handleClick}) {
 
     if(opacity < 0.05 && mode === "up") {
       mode = "down";
-      BezierProvider.beziers["point" + index][0].setPoints(7, 8);
+      BezierProvider.beziers["point" + index][0].setPoints(7, 7.5);
       BezierProvider.beziers["point" + index][1].setPoints(0, 1);
     }
 
