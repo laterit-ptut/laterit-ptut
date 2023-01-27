@@ -17,7 +17,7 @@ export function Point({data,index, handleClick}) {
   let bez = [];
   bez.push(new Bezier());
   bez.push(new Bezier());
-  bez[0].setPoints(7, 8);
+  bez[0].setPoints(7, 7.5);
   bez[1].setPoints(0, 1);
 
   BezierProvider.beziers["point" + index] = bez;
@@ -36,7 +36,7 @@ export function Point({data,index, handleClick}) {
 
     if(opacity >= 0.95 && mode === "down") {
       mode = "up";
-      BezierProvider.beziers["point" + index][0].setPoints(8, 7);
+      BezierProvider.beziers["point" + index][0].setPoints(7.5, 7);
       BezierProvider.beziers["point" + index][1].setPoints(1, 0);
     }
 
