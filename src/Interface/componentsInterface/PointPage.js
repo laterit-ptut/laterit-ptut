@@ -34,7 +34,7 @@ function PointPage({data, setActivePoint, activePoint}) {
 	return(
 		<div className="pointPage">
       <h2>{data.name.mg}</h2>
-      <h3>{data.name.fr + " - " + data.name.en}</h3>
+      <h3>{data.name.fr}</h3>
       <video key={sourceVideo} muted={muted} autoPlay onEnded={() => changeVideoAtEnd()} poster="/icons/loadvideo.png">
           <source src={sourceVideo} type="video/mp4"/>
       </video> 
