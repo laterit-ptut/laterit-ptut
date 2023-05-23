@@ -2,16 +2,16 @@ export class StateMapManager {
 
   //active Point
   static activePoint = {
-    value : -1,
+    value: -1,
     callbackFunctions: []
   };
 
   static prevPoint = -1;
 
   static changeActivePoint(index) {
-    if(index !== this.activePoint.value) {
+    if (index !== this.activePoint.value) {
       this.prevPoint = this.activePoint.value;
-      if(index === -1) {
+      if (index === -1) {
         this.prevPoint = -1;
       }
       this.activePoint.value = index;
@@ -29,16 +29,16 @@ export class StateMapManager {
     this.activePoint.callbackFunctions.push(funct);
   }
 
-  static getPrevPoint() {return this.prevPoint}
+  static getPrevPoint() { return this.prevPoint }
 
   //blockInterface
   static blockInterface = {
-    value : false,
+    value: false,
     callbackFunctions: []
   };
 
   static changeBlockInterface(bool) {
-    if(bool !== this.blockInterface.value) {
+    if (bool !== this.blockInterface.value) {
       this.blockInterface.value = bool;
       this.blockInterface.callbackFunctions.forEach(funct => {
         funct(bool);
@@ -54,29 +54,57 @@ export class StateMapManager {
     this.blockInterface.callbackFunctions.push(funct);
   }
 
-  //Number of points
+  //Active chemins
 
-  static numberOfPoints = 0; 
+  static activeChemin = -1;
 
-  static getNumberOfPoints() {return this.numberOfPoints}
+  static setActiveChemin(number) { this.activeChemin = number; }
+  static getActiveChemin() { return this.activeChemin }
+  static getNameActiveChemin() { return this.chemins[this.activeChemin].name }
 
-  static setNumberOfPoints(number) {this.numberOfPoints = number}
+  //Chemins
+
+  static chemins = [];
+
+  static setChemins(data) { this.chemins = data }
+
+  static getNextPointOnChemin() {
+    if (this.activeChemin !== -1) {
+      let index = this.chemins[this.activeChemin].points.indexOf(this.activePoint.value);
+      if (index + 1 === this.chemins[this.activeChemin].points.length) {
+        return this.chemins[this.activeChemin].points[0];
+      } else {
+        return this.chemins[this.activeChemin].points[index + 1];
+      }
+    }
+  }
+
+  static getPrevPointOnChemin() {
+    if (this.activeChemin !== -1) {
+      let index = this.chemins[this.activeChemin].points.indexOf(this.activePoint.value);
+      if (index === 0) {
+        return this.chemins[this.activeChemin].points[this.chemins[this.activeChemin].points.length - 1];
+      } else {
+        return this.chemins[this.activeChemin].points[index - 1];
+      }
+    }
+  }
 
   //A propos
 
   static aPropos = {
-    value : false,
+    value: false,
     callbackFunctions: []
   };
 
   static changeAPropos(bool) {
-    if(bool !== this.aPropos.value) {
+    if (bool !== this.aPropos.value) {
       this.aPropos.value = bool;
       this.aPropos.callbackFunctions.forEach(funct => {
         funct(bool);
       });
     }
-    if(bool) {
+    if (bool) {
       this.changeActivePoint(-1);
     }
   }

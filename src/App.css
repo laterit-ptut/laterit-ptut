@@ -8,10 +8,23 @@
   color: #fff !important ;
 }
 
-.Map, .App, .Interface {
+.Map, .App {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
+
+.Interface {
+  aspect-ratio: 9 / 16;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
 
 .debug {
   z-index: 100;
@@ -29,13 +42,6 @@
 
 .App {
   position: relative;
-}
-
-.Interface {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
 }
 
 .content {
@@ -82,6 +88,19 @@ p {
   padding: 3vh;
   margin: auto;
   position: relative;
+}
+
+.cheminHeader {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  background-color: #FF6B65;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 0;
 }
 
 .pointPage h2 {
@@ -269,6 +288,91 @@ span {
   width: 100%;
   margin: 1vh auto;
   cursor: pointer;
+}
+
+/* ---------------------------- MENU ---------------------------- */
+
+.Menu{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.menuContent {
+  pointer-events: auto;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0; 
+  width: 60%;
+  height: 100%;
+  padding: 15vh 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: left;
+  border-left: 1.5rem solid #FF6B65;
+  background-color: rgba(27, 27, 27, 0.8) ;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(100%);
+}
+
+.Menu.open .menuContent{
+  transform: translateX(0);
+}
+
+.titlesChemin{ 
+  margin-bottom: 5vh;
+}
+
+.titlesChemin h2{
+  margin: 0;
+  font-size: 5vh;
+}
+
+.titlesChemin h3{
+  margin: 0;
+  font-size: 3.5vh;
+  font-family: 'Yatra One', cursive;
+}
+
+.cheminLink{
+  display: flex;
+  flex-direction: row;
+  margin: 2vh 0;
+  cursor: pointer;
+}
+
+.cheminLink img{
+  width: 8vh;
+  height: auto;
+  margin-right: 2vh;
+}
+
+.cheminLink p{
+  font-size: 1.8vh;
+}
+
+.menuButton {
+  position: absolute;
+  left: -100px;
+  top: -80px; 
+  padding: 100px 20px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  transform: rotate(0);
+}
+
+.menuButton.menuOpen {
+  transform: rotate(180deg);
+}
+
+.menuButton img{
+  width: 4vh;
 }
 
 /* ---------------------------- Footer ---------------------------- */

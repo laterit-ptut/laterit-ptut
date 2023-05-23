@@ -17,7 +17,8 @@ body {
 }
 
 #root {
-  aspect-ratio: 9 / 16;
+  /* aspect-ratio: 9 / 16; */
+  width: 100%;
   height: 100%;
 }
 

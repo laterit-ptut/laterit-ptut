@@ -3,15 +3,25 @@ import { StateMapManager } from '../../Map/componentsMap/StateMapManager';
 
 function Buttons({ setActivePoint, index }) {
 
-  function changePoint(nb) {
-    let nbPoints = StateMapManager.getNumberOfPoints();
+  function changePoint(nb) { //-1 prev / 0 reset / 1 next
     if (nb === 0) {
       index = -1;
+      StateMapManager.setActiveChemin(-1);
     }
     else {
-      let new_index = index+nb; 
-			if (new_index < 0) index = 12; 
-			else index = Math.abs(new_index)%13; 
+      let activeChemin = StateMapManager.getActiveChemin();
+      if (activeChemin == -1) {
+        let new_index = index + nb;
+        if (new_index < 0) index = 12;
+        else index = Math.abs(new_index) % 13;
+      } else {
+        if (nb === -1) {
+          index = StateMapManager.getPrevPointOnChemin();
+        }
+        if (nb === 1) {
+          index = StateMapManager.getNextPointOnChemin();
+        }
+      }
     }
     setActivePoint(index);
     StateMapManager.changeActivePoint(index);
