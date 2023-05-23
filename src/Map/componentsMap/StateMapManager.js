@@ -54,6 +54,13 @@ export class StateMapManager {
     this.blockInterface.callbackFunctions.push(funct);
   }
 
+  //nbPoints
+
+  static nbPoints = -1;
+
+  static setNbPoints(number) { this.nbPoints = number; }
+  static getNbPoints() { return this.nbPoints }
+
   //Active chemins
 
   static activeChemin = -1;

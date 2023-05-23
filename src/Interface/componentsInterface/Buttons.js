@@ -4,6 +4,7 @@ import { StateMapManager } from '../../Map/componentsMap/StateMapManager';
 function Buttons({ setActivePoint, index }) {
 
   function changePoint(nb) { //-1 prev / 0 reset / 1 next
+    let nbPoints = StateMapManager.getNbPoints()
     if (nb === 0) {
       index = -1;
       StateMapManager.setActiveChemin(-1);
@@ -12,8 +13,8 @@ function Buttons({ setActivePoint, index }) {
       let activeChemin = StateMapManager.getActiveChemin();
       if (activeChemin == -1) {
         let new_index = index + nb;
-        if (new_index < 0) index = 12;
-        else index = Math.abs(new_index) % 13;
+        if (new_index < 0) index = nbPoints - 1;
+        else index = Math.abs(new_index) % nbPoints;
       } else {
         if (nb === -1) {
           index = StateMapManager.getPrevPointOnChemin();

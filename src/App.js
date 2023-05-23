@@ -30,6 +30,7 @@ const App = () => {
       })
       .then(function (myJson) {
         StateMapManager.setChemins(myJson.chemins);
+        StateMapManager.setNbPoints(myJson.points.length);
         setData(myJson);
       });
   }
