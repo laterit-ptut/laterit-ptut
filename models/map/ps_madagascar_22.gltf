@@ -1,0 +1,333 @@
+{
+  "asset": {
+    "generator": "glTF-Transform v3.3.6",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "type": "SCALAR",
+      "componentType": 5125,
+      "count": 518916
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 90424,
+      "max": [
+        13.25538158416748,
+        4.247238636016846,
+        121.32865905761719
+      ],
+      "min": [
+        -17.461734771728516,
+        -0.2676599621772766,
+        -9.819526672363281
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 90424
+    },
+    {
+      "type": "VEC2",
+      "componentType": 5126,
+      "count": 90424
+    },
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 162
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 43,
+      "max": [
+        -2.312851905822754,
+        0.09366369247436523,
+        5.2963175773620605
+      ],
+      "min": [
+        -2.7786645889282227,
+        0,
+        4.900216579437256
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 43
+    },
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 63804
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 10929,
+      "max": [
+        1.1510469913482666,
+        0.3883751928806305,
+        2.429142951965332
+      ],
+      "min": [
+        -1,
+        0.0000671246598358266,
+        -0.5433070659637451
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 10929
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 503460
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 503460,
+      "byteLength": 429
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 503889,
+      "byteLength": 43170
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "textures": [
+    {
+      "source": 1,
+      "sampler": 0
+    },
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 2,
+      "sampler": 0
+    }
+  ],
+  "images": [
+    {
+      "name": "sn_normal",
+      "mimeType": "image/png",
+      "uri": "sn_normal.png"
+    },
+    {
+      "name": "color_PS_beta",
+      "mimeType": "image/png",
+      "uri": "color_PS_beta.png"
+    },
+    {
+      "name": "sr_rough",
+      "mimeType": "image/png",
+      "uri": "sr_rough.png"
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "ps_madagascar_22.bin",
+      "byteLength": 547059
+    }
+  ],
+  "materials": [
+    {
+      "name": "Material.001",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
+      },
+      "normalTexture": {
+        "index": 1
+      }
+    },
+    {
+      "name": "Material.002",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1
+        ],
+        "roughnessFactor": 0.5,
+        "metallicFactor": 0
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Plane.003",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1,
+            "NORMAL": 2,
+            "TEXCOORD_0": 3
+          },
+          "mode": 4,
+          "material": 0,
+          "indices": 0,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1,
+                "TEXCOORD_0": 2
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Plane.002",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 5,
+            "NORMAL": 6
+          },
+          "mode": 4,
+          "material": 1,
+          "indices": 4,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 1,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Landscape.002",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 8,
+            "NORMAL": 9
+          },
+          "mode": 4,
+          "indices": 7,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 2,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "map_no_edges",
+      "translation": [
+        3.822014808654785,
+        2,
+        2.7484288215637207
+      ],
+      "rotation": [
+        0,
+        0.7077405452728271,
+        0,
+        0.7064724564552307
+      ],
+      "scale": [
+        1.106797695159912,
+        1,
+        1
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "map_no_edges.001",
+      "translation": [
+        83.27886199951172,
+        3,
+        4.748428821563721
+      ],
+      "rotation": [
+        0,
+        0.7077405452728271,
+        0,
+        0.7064724564552307
+      ],
+      "scale": [
+        1.106797695159912,
+        1,
+        1
+      ],
+      "mesh": 1
+    },
+    {
+      "name": "Landscape.002",
+      "translation": [
+        115.82884979248047,
+        5.201648712158203,
+        1.8685359954833984
+      ],
+      "rotation": [
+        0,
+        0.32054808735847473,
+        0,
+        0.9472322463989258
+      ],
+      "scale": [
+        0.7659958600997925,
+        0.7659958004951477,
+        0.7659958600997925
+      ],
+      "mesh": 2
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "scene": 0,
+  "extensionsUsed": [
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ]
+}

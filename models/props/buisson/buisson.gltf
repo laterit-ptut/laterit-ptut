@@ -1,0 +1,204 @@
+{
+  "asset": {
+    "generator": "glTF-Transform v3.3.6",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 114408
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 19949,
+      "max": [
+        0.9668415784835815,
+        0.7123825550079346,
+        1.0256315469741821
+      ],
+      "min": [
+        -0.9432870149612427,
+        -1.0517064332962036,
+        -0.9699100255966187
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 19949
+    },
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 1182
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 267,
+      "max": [
+        0.19053548574447632,
+        -0.8614664077758789,
+        0.1695253551006317
+      ],
+      "min": [
+        -0.19053548574447632,
+        -1.3433727025985718,
+        -0.16952534019947052
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 267
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 96461
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 96461,
+      "byteLength": 1671
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "buisson.bin",
+      "byteLength": 98132
+    }
+  ],
+  "materials": [
+    {
+      "name": "Material.001",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0063630640506744385,
+          0.04115927591919899,
+          0,
+          1
+        ],
+        "metallicFactor": 0
+      },
+      "extensions": {
+        "KHR_materials_ior": {
+          "ior": 1.4500000476837158
+        },
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "Material",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.02443430759012699,
+          0.010156125761568546,
+          0.001785883679986,
+          1
+        ],
+        "metallicFactor": 0
+      },
+      "extensions": {
+        "KHR_materials_ior": {
+          "ior": 1.4500000476837158
+        },
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Sphere",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1,
+            "NORMAL": 2
+          },
+          "mode": 4,
+          "material": 0,
+          "indices": 0,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1
+              }
+            }
+          }
+        },
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5
+          },
+          "mode": 4,
+          "material": 1,
+          "indices": 3,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 1,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Sphere",
+      "translation": [
+        0,
+        2.00759220123291,
+        0
+      ],
+      "scale": [
+        1,
+        1.674979329109192,
+        1.1239352226257324
+      ],
+      "mesh": 0
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "extensionsUsed": [
+    "KHR_materials_ior",
+    "KHR_materials_specular",
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ]
+}

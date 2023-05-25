@@ -1,0 +1,204 @@
+{
+  "asset": {
+    "generator": "glTF-Transform v3.3.6",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 94872
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 17247,
+      "max": [
+        4.491116523742676,
+        3.1766517162323,
+        4.861053943634033
+      ],
+      "min": [
+        -3.4636147022247314,
+        -3.789320230484009,
+        -1.119941234588623
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 17247
+    },
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 2664
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 446,
+      "max": [
+        3.2591865062713623,
+        2.165691375732422,
+        3.822528839111328
+      ],
+      "min": [
+        -2.810014247894287,
+        -10.999841690063477,
+        0.541695237159729
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 446
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 83832
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 83832,
+      "byteLength": 3039
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "tree2.bin",
+      "byteLength": 86871
+    }
+  ],
+  "materials": [
+    {
+      "name": "Material.001",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.01219305768609047,
+          0.06595650315284729,
+          0.004047351889312267,
+          1
+        ],
+        "metallicFactor": 0
+      },
+      "extensions": {
+        "KHR_materials_ior": {
+          "ior": 1.4500000476837158
+        },
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            0.029396992884084632,
+            0.029396992884084632,
+            0.029396992884084632
+          ]
+        }
+      }
+    },
+    {
+      "name": "Material",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.1245264783501625,
+          0.07189643383026123,
+          0.017395231872797012,
+          1
+        ],
+        "metallicFactor": 0
+      },
+      "extensions": {
+        "KHR_materials_ior": {
+          "ior": 1.4500000476837158
+        },
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Sphere.003",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1,
+            "NORMAL": 2
+          },
+          "mode": 4,
+          "material": 0,
+          "indices": 0,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1
+              }
+            }
+          }
+        },
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5
+          },
+          "mode": 4,
+          "material": 1,
+          "indices": 3,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 1,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Sphere.003",
+      "translation": [
+        -0.13755443692207336,
+        7.312787055969238,
+        -1.8736851215362549
+      ],
+      "scale": [
+        0.9262049794197083,
+        0.9262049794197083,
+        0.9262049794197083
+      ],
+      "mesh": 0
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "extensionsUsed": [
+    "KHR_materials_ior",
+    "KHR_materials_specular",
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ]
+}

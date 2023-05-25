@@ -1,0 +1,204 @@
+{
+  "asset": {
+    "generator": "glTF-Transform v3.3.6",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 104922
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 17489,
+      "max": [
+        1.2810001373291016,
+        1.1370054483413696,
+        0.8342317938804626
+      ],
+      "min": [
+        -1.2697288990020752,
+        -0.999519407749176,
+        -0.8548065423965454
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 17489
+    },
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 1644
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 365,
+      "max": [
+        0.5039189457893372,
+        -0.5833133459091187,
+        0.3328017294406891
+      ],
+      "min": [
+        -0.5039189457893372,
+        -9.876810073852539,
+        -0.33280226588249207
+      ]
+    },
+    {
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 365
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 86646
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 86646,
+      "byteLength": 1941
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "baobab3.bin",
+      "byteLength": 88587
+    }
+  ],
+  "materials": [
+    {
+      "name": "Material.001",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.006389733869582415,
+          0.047893401235342026,
+          0.006200467702001333,
+          1
+        ],
+        "metallicFactor": 0
+      },
+      "extensions": {
+        "KHR_materials_ior": {
+          "ior": 1.4500000476837158
+        },
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "Material",
+      "doubleSided": true,
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.07474525272846222,
+          0.044498130679130554,
+          0.016205815598368645,
+          1
+        ],
+        "metallicFactor": 0
+      },
+      "extensions": {
+        "KHR_materials_ior": {
+          "ior": 1.4500000476837158
+        },
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Sphere.001",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1,
+            "NORMAL": 2
+          },
+          "mode": 4,
+          "material": 0,
+          "indices": 0,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1
+              }
+            }
+          }
+        },
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5
+          },
+          "mode": 4,
+          "material": 1,
+          "indices": 3,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 1,
+              "attributes": {
+                "POSITION": 0,
+                "NORMAL": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Sphere.001",
+      "translation": [
+        -0.1823415458202362,
+        13.276041984558105,
+        -16.87035369873047
+      ],
+      "scale": [
+        3.985943078994751,
+        2.2164032459259033,
+        6.035397529602051
+      ],
+      "mesh": 0
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "scene": 0,
+  "extensionsUsed": [
+    "KHR_materials_ior",
+    "KHR_materials_specular",
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1b002a8a.css",
+    "main.js": "/static/js/main.6a12d449.js",
+    "static/js/787.b6765257.chunk.js": "/static/js/787.b6765257.chunk.js",
+    "static/media/YatraOne-Regular.ttf": "/static/media/YatraOne-Regular.87c0deac71cce6753c07.ttf",
+    "static/media/Raleway-VariableFont_wght.ttf": "/static/media/Raleway-VariableFont_wght.238c232d5e08ec0c1c74.ttf",
+    "index.html": "/index.html",
+    "main.1b002a8a.css.map": "/static/css/main.1b002a8a.css.map",
+    "main.6a12d449.js.map": "/static/js/main.6a12d449.js.map",
+    "787.b6765257.chunk.js.map": "/static/js/787.b6765257.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b002a8a.css",
+    "static/js/main.6a12d449.js"
+  ]
+}
