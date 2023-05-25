@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Cloud } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-export function MyCloud({p0}) {
+export function MyCloud({ p0 }) {
 
   const cloud = useRef();
 
@@ -12,9 +12,9 @@ export function MyCloud({p0}) {
     cloud.current.position.z = p0.position[2];
   })
 
-  return<>
+  return <>
     <mesh ref={cloud}>
-      <Cloud speed={0.2} opacity={0.35} />
+      <Cloud texture={'cloud.png'} speed={0.2} opacity={0.35} />
     </mesh>
   </>
 }

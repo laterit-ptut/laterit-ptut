@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+@font-face {
+  font-family: 'Raleway';
+  src: url("../public/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: 'Yatra One';
+  src: url("../public/fonts/Yatra_One/YatraOne-Regular.ttf");
+}
 
 *{
   font-family: 'Raleway', sans-serif;
+  font-weight: 300;
   margin: 0;
   padding: 0;
   color: #fff !important ;
