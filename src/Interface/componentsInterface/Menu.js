@@ -26,7 +26,7 @@ export function Menu({ chemins }) {
                         StateMapManager.changeActivePoint(chemin.points[0]);
                         handleMenuClick();
                     }}>
-                        <img src='/icons/iconCharrette.png' />
+                        <img src={`/icons/${chemin.icon}`} />
                         <p>{chemin.name}</p>
                     </div>
                 )}

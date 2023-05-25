@@ -29,6 +29,7 @@ const App = () => {
         return response.json();
       })
       .then(function (myJson) {
+        console.log(myJson.points);
         StateMapManager.setChemins(myJson.chemins);
         StateMapManager.setNbPoints(myJson.points.length);
         setData(myJson);

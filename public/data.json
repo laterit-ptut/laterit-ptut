@@ -560,42 +560,52 @@
   "chemins": [
     {
       "name": "Voyage à pieds",
+      "icon": "iconPieds.png",
       "points": [
-        0,
-        1,
-        2
+        2,
+        3,
+        4,
+        10,
+        12
       ]
     },
     {
       "name": "Charrette et zébus",
+      "icon": "iconCharrette.png",
       "points": [
-        1,
-        0,
-        2
+        2,
+        3,
+        10
       ]
     },
     {
       "name": "Pirogue",
+      "icon": "iconPirogue.png",
       "points": [
         0,
         1,
-        2
+        5
       ]
     },
     {
       "name": "Cuisine et bain",
+      "icon": "iconCuisine.png",
       "points": [
         0,
-        1,
-        2
+        3,
+        6,
+        7,
+        9,
+        11,
+        12
       ]
     },
     {
       "name": "Spirituaité",
+      "icon": "iconEsprit.png",
       "points": [
-        0,
-        1,
-        2
+        8,
+        7
       ]
     }
   ]

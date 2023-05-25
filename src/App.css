@@ -343,13 +343,15 @@ span {
 .cheminLink{
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   margin: 2vh 0;
   cursor: pointer;
 }
 
 .cheminLink img{
-  width: 8vh;
-  height: auto;
+  max-height: 75px;
+  max-width: 70px;
   margin-right: 2vh;
 }
 
