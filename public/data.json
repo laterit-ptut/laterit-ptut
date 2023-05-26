@@ -220,7 +220,7 @@
       "name": {
         "mg": "Maroantsetra",
         "en": "Many sets or positions",
-        "fr": "La où il a beaucoup de resistants ou d'orgueilleux ou d'arbres a talismans"
+        "fr": "La où il a beaucoup de resistants ou d'orgueilleux ou d'arbres à talismans"
       },
       "text": {
         "mg": "desMG",
@@ -601,7 +601,7 @@
       ]
     },
     {
-      "name": "Spirituaité",
+      "name": "Spiritualité",
       "icon": "iconEsprit.png",
       "points": [
         8,
